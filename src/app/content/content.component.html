@@ -1,0 +1,45 @@
+<div class="content-wrap">
+
+	<div *ngFor="let matchDetail of listMatch">
+
+		<div class="catcontent-wrap">
+
+			<div class="subject-cat">
+				{{matchDetail.catName}}
+			</div>
+			<div *ngFor="let inDetail of matchDetail.matchDetail">		
+				<div class="wrap-table-list">
+					<table class="table table-bordered intable-list">										 
+						<tbody>
+
+							<tr>
+
+								<td class="date-table" scope="row">
+									<span *ngIf="inDetail.day<=9">0</span>{{inDetail.day}} 
+									{{monthThai[inDetail.month]}} 
+									<b>{{inDetail.time}}</b>
+								</td>
+								<td class="namevs-table">
+									{{inDetail.team1}} vs {{inDetail.team2}}
+									<i class="td-time fa fa-clock-o" aria-hidden="true"></i>
+								</td>
+								<td >{{inDetail.percent1}}% / {{inDetail.percent2}}%</td>
+								<td class="multiply-table">x 1.7</td>
+								<td class="multiply-table">x 2.3</td>
+							</tr>
+
+						 </tbody>
+					</table>
+				</div>
+			</div>
+
+		</div>
+	
+	</div>
+
+
+
+
+
+</div>
+

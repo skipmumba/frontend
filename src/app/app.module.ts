@@ -1,14 +1,28 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule }   from '@angular/forms';
+import {HttpModule} from '@angular/http'
 
 import { AppComponent } from './app.component';
+import { MenubarComponent } from './menubar/menubar.component';
+import { ContentComponent } from './content/content.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
+import { SlideComponent } from './slide/slide.component';
+import { CatheaderComponent } from './catheader/catheader.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MenubarComponent,
+    ContentComponent,
+    SidebarComponent,
+    SlideComponent,
+    CatheaderComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
