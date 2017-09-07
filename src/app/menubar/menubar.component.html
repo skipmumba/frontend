@@ -1,10 +1,28 @@
-<nav class="navbarfix navbar  fixed-top">
+<div [hidden]="hideRegis">	
+	<app-register (emitCloseRegis)="closeRegis($event)"></app-register>
+</div>
+<nav class="navbarfix navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 	<div class="container">
-		<div class="row">			
-			<a class="navbar-brand" href="#">
-		    		<img src="https://hearthstone-a.akamaihd.net/images/logos/th-th/logo-sub-620979ce056b511ae72260fa2cc6a6d067b7f064f9e73b0adfb24c3f3b18619dd70530c9fdc1a7e779eeacd18ba6507688ab016c1b51e67b6ca98de127b64454.png" width="150">
-		    		sad
-		 	 </a>
-		</div>
+		
+  
+    		<a class="navbar-brand" href="#">
+		    	<img src="https://hearthstone-a.akamaihd.net/images/logos/th-th/logo-sub-620979ce056b511ae72260fa2cc6a6d067b7f064f9e73b0adfb24c3f3b18619dd70530c9fdc1a7e779eeacd18ba6507688ab016c1b51e67b6ca98de127b64454.png" width="150">
+		</a>
+    		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+     		<li class="nav-item active">
+	        		<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	      	</li>
+	      	<li class="nav-item">
+	        		<a class="nav-link" href="#">Link</a>
+	      	</li>
+	      	<!-- <li class="nav-item">
+	        		<a class="nav-link disabled" href="#">Disabled</a>
+	      	</li> -->
+	    	</ul>
+   
+      	<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-key" aria-hidden="true"></i> เข้าสู่ระบบ</button>
+      	<button (click)="regisTer()" class="btn btn-outline-warning my-2 my-sm-0" type="submit">สมัครสมาชิก</button>
+   
+
 	</div>
 </nav>

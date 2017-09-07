@@ -7,9 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenubarComponent implements OnInit {
 
-  constructor() { }
+  	constructor() { }
+    hideRegis = true
+  	regisTer()
+  	{
+  		  this.hideRegis = false
+  	}
 
-  ngOnInit() {
-  }
+    closeRegis(e)
+    {
+        this.hideRegis = e
+    }
+
+  	ngOnInit() 
+  	{
+  	}
 
 }

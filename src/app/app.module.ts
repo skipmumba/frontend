@@ -9,6 +9,7 @@ import { ContentComponent } from './content/content.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { SlideComponent } from './slide/slide.component';
 import { CatheaderComponent } from './catheader/catheader.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CatheaderComponent } from './catheader/catheader.component';
     ContentComponent,
     SidebarComponent,
     SlideComponent,
-    CatheaderComponent
+    CatheaderComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
