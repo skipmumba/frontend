@@ -1,0 +1,38 @@
+.sidebar-wrap
+{
+	padding:0px;
+}
+.wrap-odd
+{
+	background: #EAEAEA;
+	padding: 0px;
+}
+.subject-sidebar
+{
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-top: 15px;
+	font-weight: bold;
+}
+.wrap-list-odd
+{
+	padding-left: 15px;
+	padding-right: 15px;
+	padding-bottom: 15px;
+}
+.odd-detail-block
+{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	background: #FFF;
+	padding: 10px;
+}
+input::-webkit-input-placeholder {
+    font-size: 12px;
+  	text-align: center;
+   }
+.total
+{
+	padding:15px;
+	background: #FFF;
+}

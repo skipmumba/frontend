@@ -9,20 +9,43 @@
 	    			</b>
 	  		</div>
 	  		<div class="card-body text-warning">
-
-	    			<form [formGroup]="rFrom" (ngSubmit)="onSubmit()" novalidate>
-	    			{{rFrom.status}} {{rFrom.value.email}}
+	    			<form [formGroup]="rFrom" (ngSubmit)="onRegis()">
 			  		<div class="form-group">
 			   			<label for="exampleInputEmail1">อีเมล</label>
+			   			<div class="alert alert-danger"  role="alert" 
+			   			*ngIf="rFrom.controls.email.errors?.minlength">
+						  ต้องมากกว่า 8 ตัวอักษร
+						</div>
+						<div class="alert alert-danger"  role="alert" 
+						*ngIf="rFrom.controls.email.errors?.required && !rFrom.controls.email.pristine ">
+						  จำเป็นต้องกรอก
+						</div>
+						<div class="alert alert-danger"  role="alert" *ngIf="rFrom.controls.email.errors?.sameuser">
+						  มีผู้ใช้งานแล้ว
+						</div>
+						
+						<div class="alert alert-danger"  role="alert" *ngIf="rFrom.controls.email.errors?.pattern && !rFrom.controls.email.pristine">
+						  รูปแบบอีเมลไม่ถูกต้อง
+						</div>
 			    			<input type="text" class="form-control form-control-lg" formControlName="email">
 			  		</div>
 			 		
 			 		<div class="form-group">
 			   			<label for="exampleInputEmail1">รหัสผ่าน</label>
-			    			<input type="text" class="form-control form-control-lg" formControlName="pass">
+			   			<div class="alert alert-danger"  role="alert" 
+			   			*ngIf="rFrom.controls.pass.errors?.required && !rFrom.controls.pass.pristine ">
+						  จำเป็นต้องกรอก
+						</div>
+						<div class="alert alert-danger"  role="alert" 
+			   			*ngIf="rFrom.controls.pass.errors?.minlength && !rFrom.controls.pass.pristine">
+						  ต้องมากกว่า 8 อักษร
+						</div>
+						<div class="alert alert-danger"  role="alert" *ngIf="rFrom.controls.pass.errors?.pattern && !rFrom.controls.pass.pristine">
+						  เฉพาะภาษาอังกฤษและตัวเลขหรือ -_
+						</div>
+			    			<input type="text" class="form-control form-control-lg" formControlName="pass" required>
 			  		</div>
-
-			  		<button type="submit" class="text-dark btn btn-warning btn-lg">ลงทะเบียน</button>
+			  		<button type="submit" [disabled]="rFrom.invalid" class="text-dark btn btn-warning btn-lg">ลงทะเบียน</button>
 	    				
 	    			</form>
 
