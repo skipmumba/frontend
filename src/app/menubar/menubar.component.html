@@ -23,9 +23,11 @@
 	        		<a class="nav-link disabled" href="#">Disabled</a>
 	      	</li> -->
 	    	</ul>
-   
-      	<button (click)="showLogin()" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-key" aria-hidden="true"></i> เข้าสู่ระบบ</button>
-      	<button (click)="regisTer()" class="btn btn-outline-warning my-2 my-sm-0" type="submit">สมัครสมาชิก</button>
+
+	    	<div [hidden]="st.getLogin()">
+	      	<button (click)="showLogin()"   class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-key" aria-hidden="true"></i> เข้าสู่ระบบ</button>
+	      	<button (click)="regisTer()" class="btn btn-outline-warning my-2 my-sm-0" type="submit">สมัครสมาชิก</button>    		
+	    	</div>
    
 
 	</div>

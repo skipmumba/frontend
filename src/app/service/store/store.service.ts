@@ -1,17 +1,23 @@
 import { Injectable } from '@angular/core';
+import { Observable} from 'rxjs/Observable';
 
 @Injectable()
 export class StoreService {
 
-
+	private already = false;
 	private storageMember
-	getStorage()
+	getLogin()
 	{
-		console.log(this.storageMember)
+		return this.already	
+	}
+	getMemberid()
+	{
+		return this.storageMember
 	}
 	setStorage(id)
 	{
 		this.storageMember = id
+		this.already = true
 	}
  	constructor() { }
 }

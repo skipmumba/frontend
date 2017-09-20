@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {Observable} from 'rxjs/Observable';
 import { StoreService } from '../service/store/store.service'
 
 @Component({
@@ -9,17 +9,18 @@ import { StoreService } from '../service/store/store.service'
 })
 export class MenubarComponent implements OnInit {
 
-  	constructor(private st:StoreService) { }
+  	constructor(private st:StoreService) {
+
+    }
+
     hideRegis = true
     logIn = true
-
   	regisTer()
   	{
   		  this.hideRegis = false
   	}
     showLogin()
     {
-      this.st.getStorage()
       this.logIn = false
     }
     closeLogin(e)

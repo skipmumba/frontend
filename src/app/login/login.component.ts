@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit {
         			  if(data.statusLogin)
                 {
                   this.storeService.setStorage(data.memberCode)
+                  this.loginFrom.reset()
                   this.errorLogin = false
                 }
                 else 
