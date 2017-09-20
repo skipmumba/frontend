@@ -13,6 +13,8 @@ import { CatheaderComponent } from './catheader/catheader.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
+import { StoreService } from './service/store/store.service'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +32,7 @@ import { LoginComponent } from './login/login.component';
     ReactiveFormsModule,
     HttpModule,
   ],
-  providers: [],
+  providers: [StoreService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

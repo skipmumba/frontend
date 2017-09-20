@@ -25,7 +25,9 @@ export class RegisterComponent implements OnInit {
         'pass':[null,Validators.compose([Validators.required,Validators.minLength(8),Validators.pattern(this.patternPass)])]
   		});
   	}
-
+    headers = new Headers({
+    'Content-Type': 'application/json'
+  });
 
   	hideRegis()
   	{
@@ -68,7 +70,7 @@ export class RegisterComponent implements OnInit {
     {
         var dataUSer = this.rFrom.value
         
-        this.http.post(this.hostphp+'/backend/register/regisTer',dataUSer).map(ress => ress.json()).subscribe( (datas) => {
+        this.http.post(this.hostphp+'/backend/register/regisTer',dataUSer,this.headers).map(ress => ress.json()).subscribe( (datas) => {
             if(datas.regisStatus == 1)
             {
               this.succesRegis = true
