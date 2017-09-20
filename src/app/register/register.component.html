@@ -1,6 +1,10 @@
 <div class="wrap-register justify-content-center d-flex align-items-center">
 	<div class="col-md-3">
-		
+
+		<div class="alert alert-success" role="alert" [hidden]="!succesRegis">
+		  ลงทะเบียนเสร็จสมบูรณ์ <i class="fa fa-check-circle" aria-hidden="true"></i>
+		</div>
+
 		<div class="card bg-dark">
 	  		<div class="card-header text-warning d-flex justify-content-end">
 	    			<b class="mr-auto p-2">REGISTER</b>
@@ -27,7 +31,13 @@
 						<div class="alert alert-danger"  role="alert" *ngIf="rFrom.controls.email.errors?.pattern && !rFrom.controls.email.pristine">
 						  รูปแบบอีเมลไม่ถูกต้อง
 						</div>
-			    			<input type="text" class="form-control form-control-lg" formControlName="email">
+
+						<div class="alert alert-danger"  role="alert" 
+			   			*ngIf="showLoad">
+						  กำลังตรวจสอบ
+						</div>
+
+			    			<input type="text"  class="form-control form-control-lg" formControlName="email">
 			  		</div>
 			 		
 			 		<div class="form-group">
@@ -45,7 +55,7 @@
 						</div>
 			    			<input type="text" class="form-control form-control-lg" formControlName="pass" required>
 			  		</div>
-			  		<button type="submit" [disabled]="rFrom.invalid" class="text-dark btn btn-warning btn-lg">ลงทะเบียน</button>
+			  		<button type="submit" [disabled]="rFrom.invalid || loadCheck" class="text-dark btn btn-warning btn-lg">ลงทะเบียน</button>
 	    				
 	    			</form>
 

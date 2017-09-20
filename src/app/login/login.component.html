@@ -1,0 +1,29 @@
+<div class="wrap-register justify-content-center d-flex align-items-center">
+	<div class="col-md-3">
+		<div class="card bg-dark">
+			<div class="card-header text-warning d-flex justify-content-end">
+				
+					<b class="mr-auto p-2">LOGIN</b>
+					<b (click)="hideLogin()" class="p-1 text-danger" style="cursor:pointer">
+		    				<i class="fa-2x fa fa-times" aria-hidden="true"></i>
+		    			</b>
+				
+
+					
+			</div>
+			<div class="card-body text-warning">
+				<form [formGroup]="loginFrom" (ngSubmit)="checkLogin()">
+				  <div class="form-group">
+				    <label class="form-control-label" for="formGroupExampleInput">อีเมล</label>
+				    <input formControlName="email" type="text" class="form-control form-control-lg" id="formGroupExampleInput" required>
+				  </div>
+				  <div class="form-group">
+				    <label class="form-control-label" for="formGroupExampleInput2">รหัสผ่าน</label>
+				    <input formControlName="pass" type="text" class="form-control form-control-lg" id="formGroupExampleInput2" required>
+				  </div>
+				  <input [disabled]="loginFrom.invalid" type="submit" class="btn btn-success btn-lg" value="เข้าสู่ระบบ">
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

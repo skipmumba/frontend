@@ -1,6 +1,10 @@
 <div [hidden]="hideRegis">	
 	<app-register (emitCloseRegis)="closeRegis($event)"></app-register>
 </div>
+
+<div [hidden]="logIn">	
+	<app-login (emitCloseLogin)="closeLogin($event)"></app-login>
+</div>
 <nav class="navbarfix navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
 	<div class="container">
 		
@@ -20,7 +24,7 @@
 	      	</li> -->
 	    	</ul>
    
-      	<button class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-key" aria-hidden="true"></i> เข้าสู่ระบบ</button>
+      	<button (click)="showLogin()" class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-key" aria-hidden="true"></i> เข้าสู่ระบบ</button>
       	<button (click)="regisTer()" class="btn btn-outline-warning my-2 my-sm-0" type="submit">สมัครสมาชิก</button>
    
 

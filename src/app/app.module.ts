@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule  }   from '@angular/forms';
 import {HttpModule} from '@angular/http'
 
+
 import { AppComponent } from './app.component';
 import { MenubarComponent } from './menubar/menubar.component';
 import { ContentComponent } from './content/content.component';
@@ -10,6 +11,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { SlideComponent } from './slide/slide.component';
 import { CatheaderComponent } from './catheader/catheader.component';
 import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +21,8 @@ import { RegisterComponent } from './register/register.component';
     SidebarComponent,
     SlideComponent,
     CatheaderComponent,
-    RegisterComponent
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
