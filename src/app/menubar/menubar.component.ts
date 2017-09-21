@@ -9,9 +9,7 @@ import { StoreService } from '../service/store/store.service'
 })
 export class MenubarComponent implements OnInit {
 
-  	constructor(private st:StoreService) {
-
-    }
+  	constructor(private st:StoreService) {}
 
     hideRegis = true
     logIn = true
@@ -25,12 +23,17 @@ export class MenubarComponent implements OnInit {
     }
     closeLogin(e)
     {
-      this.logIn = e
+      this.logIn = e // return true
     }
 
     closeRegis(e)
     {
-        this.hideRegis = e
+        this.hideRegis = e //return true
+    }
+
+    logOut()
+    {
+        this.st.logOut()
     }
 
   	ngOnInit() 

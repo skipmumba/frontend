@@ -14,14 +14,14 @@
 					อีเมลหรือรหัสผ่านไม่ถูกต้อง
 				</div>
 
-				<form [formGroup]="loginFrom" (ngSubmit)="checkLogin()">
+				<form [formGroup]="loginFrom" (ngSubmit)="checkLogin()" autocomplete="off">
 				  <div class="form-group">
 				    <label class="form-control-label" for="formGroupExampleInput">อีเมล</label>
 				    <input formControlName="email" type="text" class="form-control form-control-lg" id="formGroupExampleInput" required>
 				  </div>
 				  <div class="form-group">
 				    <label class="form-control-label" for="formGroupExampleInput2">รหัสผ่าน</label>
-				    <input formControlName="pass" type="text" class="form-control form-control-lg" id="formGroupExampleInput2" required>
+				    <input formControlName="pass" type="password" class="form-control form-control-lg" id="formGroupExampleInput2" required>
 				  </div>
 				  <div>
 				  	<input style="cursor:pointer" [disabled]="loginFrom.invalid" type="submit" class="btn btn-success btn-lg" value="เข้าสู่ระบบ">

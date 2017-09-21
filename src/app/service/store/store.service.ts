@@ -5,7 +5,8 @@ import { Observable} from 'rxjs/Observable';
 export class StoreService {
 
 	private already = false;
-	private storageMember
+	private storageMember;
+	private memberEmail;
 	getLogin()
 	{
 		return this.already	
@@ -14,10 +15,21 @@ export class StoreService {
 	{
 		return this.storageMember
 	}
-	setStorage(id)
+	getMemberEmail()
 	{
+		return this.memberEmail
+	}
+	setStorage(id,email)
+	{
+		this.memberEmail = email
 		this.storageMember = id
 		this.already = true
+	}
+	logOut()
+	{
+		this.memberEmail = null
+		this.storageMember = null
+		this.already = false
 	}
  	constructor() { }
 }

@@ -4,9 +4,33 @@
 	background:#151921;
 	border-bottom: 1px solid grey;
 }
+.navbar-nav li
+{
+	margin-right: 10px;
+	margin-left: 10px;
+}
+.navbar-nav a 
+{
+	color:#8fa2ab;
+	font-weight: bold;
+}
+.navbar-nav a:hover
+{
+	color:#FFF;
+}
 .btn
 {
 	cursor: pointer;
 	margin-right: 10px;
 	margin-left: 10px;
+}
+.dropdown-item:hover
+{
+	background: none;
+}
+.userinfo-nav
+{
+	margin-right: 30px;
+	margin-left: 30px;
+	color:#FFF;
 }

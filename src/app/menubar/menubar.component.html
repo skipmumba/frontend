@@ -5,7 +5,7 @@
 <div [hidden]="logIn">	
 	<app-login (emitCloseLogin)="closeLogin($event)"></app-login>
 </div>
-<nav class="navbarfix navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+<nav class="navbarfix navbar navbar-expand-lg  fixed-top">
 	<div class="container">
 		
   
@@ -14,15 +14,48 @@
 		</a>
     		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
      		<li class="nav-item active">
-	        		<a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+	        		<a class="nav-link" href="#">หน้าแรก</a>
 	      	</li>
 	      	<li class="nav-item">
-	        		<a class="nav-link" href="#">Link</a>
+	        		<a class="nav-link" href="#">วิธีเติมเงิน</a>
 	      	</li>
-	      	<!-- <li class="nav-item">
-	        		<a class="nav-link disabled" href="#">Disabled</a>
-	      	</li> -->
+	      	<li class="nav-item">
+	        		<a class="nav-link" href="#">ข่าว</a>
+	      	</li>
 	    	</ul>
+
+	 
+
+	    	<!-- login section -->
+	   	<div [hidden]="!st.getLogin()" class="userinfo-nav">
+	   		<i class="fa fa-user" aria-hidden="true" style="font-size: 13px;margin-right: 5px"></i>
+	   		{{st.getMemberEmail()}}
+	   		<i class="fa fa-sign-out" aria-hidden="true" (click)="logOut()" 
+	   		style="font-size: 13px;margin-left: 5px;color:red;cursor: pointer;"></i>
+	   	</div>
+	    	<div [hidden]="!st.getLogin()" class="btn-group">
+		  	<button class="btn btn-secondary btn-sm  dropdown-toggle" style="background: #000;border:none" type="button" data-toggle="dropdown" 
+		  	aria-haspopup="true" aria-expanded="false">
+		    		ยอดทั้งหมด : <b style="color:#F9D42F;">50000</b>
+		  	</button>
+		  	<div class="dropdown-menu" style="font-size: 13px;background: #000">
+		   		<a class="dropdown-item" href="#">
+		   			<div class="clearfix">
+		   				<span style="float:left;color:#FFF">คงเหลือ</span>
+		   				<span style="float:right;color:#F9D42F;min-width: ">50000</span>
+		   			</div>
+		   		</a>
+		    		<a class="dropdown-item" href="#">
+		    			<div class="clearfix">
+		   				<span style="float:left;color:#FFF">ถอนได้</span>
+		   				<span style="float:right;color:#F9D42F;">5000</span>
+		   			</div>
+		    		</a>
+		  	</div>
+		</div>
+		<button [hidden]="!st.getLogin()" type="button" class="btn btn-outline-warning">การเงิน</button>
+		<!-- login section -->
+
 
 	    	<div [hidden]="st.getLogin()">
 	      	<button (click)="showLogin()"   class="btn btn-outline-success my-2 my-sm-0" type="submit"><i class="fa fa-key" aria-hidden="true"></i> เข้าสู่ระบบ</button>

@@ -3,7 +3,7 @@ import {Http, Response} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {  FormControl,FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StoreService } from '../service/store/store.service'
-
+import * as myGlobal from '../global'
 
 @Component({
   selector: 'app-login',
@@ -11,7 +11,7 @@ import { StoreService } from '../service/store/store.service'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
+  hostphp = myGlobal.hostphp
 	@Output() emitCloseLogin = new EventEmitter<any>();
 	loginFrom:FormGroup
   headers = new Headers({
@@ -33,18 +33,19 @@ export class LoginComponent implements OnInit {
         this.hideSpin = false
         clearTimeout(this.timeOut);
         this.timeOut = setTimeout(() => {
-      		  this._http.post('http://localhost/betgame/backend/login/memberlogin',this.loginFrom.value, this.headers)
+      		  this._http.post(this.hostphp+'/backend/login/memberlogin',this.loginFrom.value, this.headers)
             .map(res => res.json())
         		.subscribe((data) => {
         			  if(data.statusLogin)
                 {
-                  this.storeService.setStorage(data.memberCode)
+                  this.storeService.setStorage(data.memberCode,data.email)
                   this.loginFrom.reset()
                   this.errorLogin = false
+                  this.emitCloseLogin.emit(true)
                 }
                 else 
                 {
-                  console.log('no have');
+                  console.log('!!!!');
                   this.errorLogin = true
                 }
                 this.hideSpin = true
