@@ -35,7 +35,7 @@
 .date-table
 {
 	word-spacing:5px;
-	width:130px;
+	width:110px;
 }
 .date-table b 
 {
@@ -44,20 +44,28 @@
 .namevs-table
 {
 	text-align: left;
-	width:280px;
 	overflow: hidden;
+	width: 300px;
 }
-
+table td 
+{
+	vertical-align: middle;
+}
 .td-time
 {
 	margin-top:3px;
+	margin-right: 3px;
 	color:#c9c8c7;
 	font-size:15px;
-	float: right;
 }
-.multiply-table
+.percent-table
 {
-	font-weight: bold;
+	/*font-weight: bold;*/
+	/*white-space: nowrap;*/
+	width: 120px;
+}
+.multi-table
+{
 	width: 100px;
 }
 /*content cat list post*/

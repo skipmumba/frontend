@@ -22,7 +22,17 @@ export class ContentComponent implements OnInit {
             }
         )  
     }
-
+    checkFirstTimeMatch(percentA,percentB)
+    {
+      if(percentA == 0 && percentB ==0)
+      {
+        return ' - '
+      }
+      else 
+      {
+        return percentA+'% vs '+percentB+'%'
+      }
+    }
     monthTh()
     {
         var month = {

@@ -3,6 +3,11 @@ body
 	/*font-family: 'Kanit', sans-serif;*/
 	background: #191D26;
 }
+@media (min-width: 1200px) {
+    .container{
+        max-width: 1400px;
+    }
+}
 .wrap-content-sidebar
 {
 	margin:390px 0px 25px 0px;

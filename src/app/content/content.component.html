@@ -14,18 +14,23 @@
 
 							<tr>
 
-								<td class="date-table" scope="row">
+								<td class="date-table">
 									<span *ngIf="inDetail.day<=9">0</span>{{inDetail.day}} 
 									{{monthThai[inDetail.month]}} 
 									<b>{{inDetail.time}}</b>
 								</td>
-								<td class="namevs-table">
-									{{inDetail.team1}} vs {{inDetail.team2}}
+								<td class="namevs-table ">
 									<i class="td-time fa fa-clock-o" aria-hidden="true"></i>
+									{{inDetail.team1}} vs {{inDetail.team2}}
+									<!-- <i class="td-time fa fa-clock-o" aria-hidden="true"></i> -->
 								</td>
-								<td >{{inDetail.percent1}}% / {{inDetail.percent2}}%</td>
-								<td class="multiply-table">x 1.7</td>
-								<td class="multiply-table">x 2.3</td>
+								<td class="percent-table">
+									{{checkFirstTimeMatch(inDetail.percentA,inDetail.percentB)}}
+								</td>
+								<td class="multi-table">x {{inDetail.oddA}}</td>
+								<td class="multi-table">x {{inDetail.oddB}}</td>
+								<td class="">กำลังแข่ง</td>
+								<td class=""> Invictus Gaming</td>
 							</tr>
 
 						 </tbody>

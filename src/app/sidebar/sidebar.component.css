@@ -36,3 +36,45 @@ input::-webkit-input-placeholder {
 	padding:15px;
 	background: #FFF;
 }
+.below-input
+{
+	width: 100%;
+	/*padding: 10px;*/
+	font-size: 11px;
+	color: #9CA9A9;
+	text-align: center;
+}
+.btn-confirm 
+{
+	text-align: center;
+	margin-top: 15px;
+}
+.btn-confirm button
+{
+	cursor: pointer;
+ background: #919699;
+  background-image: -webkit-linear-gradient(top, #919699, #4a4f52);
+  background-image: -moz-linear-gradient(top, #919699, #4a4f52);
+  background-image: -ms-linear-gradient(top, #919699, #4a4f52);
+  background-image: -o-linear-gradient(top, #919699, #4a4f52);
+  background-image: linear-gradient(to bottom, #919699, #4a4f52);
+  text-decoration: none;
+  -webkit-border-radius: 4;
+  -moz-border-radius: 4;
+  border-radius: 4px;
+  font-family: Arial;
+  color: #ffffff;
+  width: 100%;
+  font-size: 20px;
+  padding: 10px 20px 10px 20px;
+}
+.btn-confirm button:hover
+{
+  background: #d5cfd6;
+  background-image: -webkit-linear-gradient(top, #d5cfd6, #535b61);
+  background-image: -moz-linear-gradient(top, #d5cfd6, #535b61);
+  background-image: -ms-linear-gradient(top, #d5cfd6, #535b61);
+  background-image: -o-linear-gradient(top, #d5cfd6, #535b61);
+  background-image: linear-gradient(to bottom, #d5cfd6, #535b61);
+  text-decoration: none;
+}
