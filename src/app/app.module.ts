@@ -14,6 +14,8 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 
 import { StoreService } from './service/store/store.service'
+import { ChoseTeamService } from './service/chose-team/chose-team.service'
+
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { StoreService } from './service/store/store.service'
     ReactiveFormsModule,
     HttpModule,
   ],
-  providers: [StoreService],
+  providers: [StoreService,ChoseTeamService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

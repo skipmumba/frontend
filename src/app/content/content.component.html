@@ -27,10 +27,10 @@
 								<td class="percent-table">
 									{{checkFirstTimeMatch(inDetail.percentA,inDetail.percentB)}}
 								</td>
-								<td class="multi-table">x {{inDetail.oddA}}</td>
-								<td class="multi-table">x {{inDetail.oddB}}</td>
+								<td class="multi-table" (click)="_chose.selectTeam(inDetail,inDetail.oddA)">x {{inDetail.oddA}}</td>
+								<td class="multi-table" (click)="_chose.selectTeam(inDetail,inDetail.oddB)">x {{inDetail.oddB}}</td>
 								<td class="">กำลังแข่ง</td>
-								<td class=""> Invictus Gaming</td>
+								<td> Invictus Gaming</td>
 							</tr>
 
 						 </tbody>

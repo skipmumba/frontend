@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {getMatchService} from '../service/getmatch/getmatch.service'
+import { ChoseTeamService } from '../service/chose-team/chose-team.service'
 import * as myGlobal from '../global'
 @Component({
   selector: 'app-content',
@@ -9,7 +10,7 @@ import * as myGlobal from '../global'
 })
 export class ContentComponent implements OnInit {
 
-  	constructor(private getmatch:getMatchService) { }
+  	constructor(private getmatch:getMatchService,private _chose:ChoseTeamService) { }
     listMatch;
     monthThai = this.monthTh()
   	fetchMatch(d,m,y)
@@ -22,6 +23,13 @@ export class ContentComponent implements OnInit {
             }
         )  
     }
+
+    choosThis(all,each)
+    {
+      console.log(each);
+    }
+
+
     checkFirstTimeMatch(percentA,percentB)
     {
       if(percentA == 0 && percentB ==0)
