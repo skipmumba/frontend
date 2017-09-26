@@ -16,6 +16,8 @@ import { LoginComponent } from './login/login.component';
 import { StoreService } from './service/store/store.service'
 import { ChoseTeamService } from './service/chose-team/chose-team.service'
 
+import { KeypipePipe } from './pipe/keypipe.pipe';
+import { OnlynumberDirective } from './onlynumber.directive'
 
 @NgModule({
   declarations: [
@@ -27,6 +29,9 @@ import { ChoseTeamService } from './service/chose-team/chose-team.service'
     CatheaderComponent,
     RegisterComponent,
     LoginComponent,
+    KeypipePipe,
+    OnlynumberDirective,
+
   ],
   imports: [
     BrowserModule,

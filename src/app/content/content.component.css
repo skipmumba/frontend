@@ -66,6 +66,21 @@ table td
 }
 .multi-table
 {
-	width: 100px;
+	cursor: pointer;
+	width: 120px;
+}
+.team-winner
+{
+	max-width: 80px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.multi-table:hover
+{
+	background: #2a345c;
+}
+.click-bet
+{
+	background: #2a345c;
 }
 /*content cat list post*/

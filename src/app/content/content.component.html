@@ -5,13 +5,14 @@
 		<div class="catcontent-wrap">
 
 			<div class="subject-cat">
-				{{matchDetail.catName}}
+				{{matchDetail.catName}} 
 			</div>
+
 			<div *ngFor="let inDetail of matchDetail.matchDetail">		
 				<div class="wrap-table-list">
-					<table class="table table-bordered intable-list">										 
+					<table class="table table-bordered intable-list">								 
 						<tbody>
-
+							
 							<tr>
 
 								<td class="date-table">
@@ -27,10 +28,19 @@
 								<td class="percent-table">
 									{{checkFirstTimeMatch(inDetail.percentA,inDetail.percentB)}}
 								</td>
-								<td class="multi-table" (click)="_chose.selectTeam(inDetail,inDetail.oddA)">x {{inDetail.oddA}}</td>
-								<td class="multi-table" (click)="_chose.selectTeam(inDetail,inDetail.oddB)">x {{inDetail.oddB}}</td>
-								<td class="">กำลังแข่ง</td>
-								<td> Invictus Gaming</td>
+								<td class="multi-table" [class.click-bet]="_chose.toggle[inDetail.matchID+''+1]" 
+									(click)="_chose.selectTeam(inDetail,1);_chose.toggleClick(inDetail.matchID,1)">
+									x {{inDetail.oddA}}
+								</td>
+								<td class="multi-table" [class.click-bet]="_chose.toggle[inDetail.matchID+''+2]" 
+									(click)="_chose.selectTeam(inDetail,2);_chose.toggleClick(inDetail.matchID,2)">
+									x {{inDetail.oddB}}
+								</td>
+								<td style="width: 100px">กำลังแข่ง</td>
+								<td class="team-winner">
+									<span *ngIf="inDetail.winner == null">-</span>
+									<span *ngIf="inDetail.winner != null">{{inDetail.winner}}</span>
+								</td>
 							</tr>
 
 						 </tbody>

@@ -1,23 +1,32 @@
 <div class="sidebar-wrap">
 	<div class="wrap-odd">
 		<div class="subject-sidebar">
-			TEST BET SUBJECT
+			รายการที่เลือก
+		</div>
+		<div class="no-selected" *ngIf="getChoose.isEmptyObject(getChoose.toggle)">
+			เลือกทีมที่จะร่วมสนุก
 		</div>
 		<div class="wrap-list-odd">
-
+			<!-- {{getChoose.matchList | json}} -->
 			
 		
-<!-- 
-			<div class="odd-detail-block">
-				<div style="color:#378AE3;font-weight: bold">Evil Geniuses</div>
-				<div style="font-size: 13px;color:#92A1A1">	Fnatic vs Evil Geniuses</div>
+
+		
+
+			<div class="odd-detail-block" *ngFor="let entry of  getChoose.matchList ">
+				<div class="clearfix" style="color:#378AE3;font-weight: bold">
+					{{entry.teamChoose}}
+					<b class="remove-selected" (click)="getChoose.toggleClick(entry.matchId,entry.teamnum)">x</b>
+				</div>
+				<div style="font-size: 13px;color:#92A1A1">{{entry.teamVSteam}}</div>
 				<div style="font-size: 13px;color:#92A1A1">8.09.17, 14:25</div>
 				<div class="container">
 					<div class="row">
 						<div class="col-md-4" >
 							<div class="row">
 
-								<input style="margin:5px;" class="form-control" type="text">		
+								<input style="margin:5px;text-align: right" class="form-control" type="text" 
+								(ngModelChange)="getChoose.calBet($event,entry.id,entry.ood)" [ngModel]="mymodel" appOnlynumber>		
 								<div class="below-input">
 									Bet Amount
 								</div>							
@@ -25,7 +34,8 @@
 						</div>
 						<div class="col-md-4">
 							<div class="row">
-								<input style="margin:5px;" class="form-control" type="text">		
+								<input style="margin:5px;text-align: right" class="form-control" 
+								type="text" value="{{entry.ood}}" disabled>		
 								<div class="below-input">
 									Odds
 								</div>								
@@ -33,7 +43,8 @@
 						</div>
 						<div class="col-md-4">
 							<div class="row">
-								<input style="margin:5px;" class="form-control" type="text">		
+								<input style="margin:5px;text-align: right" class="form-control" type="text" 
+								value="{{getChoose.eachReward[entry.id]}}" disabled>		
 								<div class="below-input">
 									Possible Winning
 								</div>								
@@ -42,35 +53,35 @@
 					
 					</div>
 				</div>
-			</div> -->
+			</div>
 
-<!-- 
-			<div class="wrap-summary">
-					<div class="subject-sidebar" style="border-bottom: 1px solid #92A1A1;padding-bottom: 15px;margin-bottom: 15px">
+
+			<div class="wrap-summary" *ngIf="!getChoose.isEmptyObject(getChoose.toggle)">
+					<div class="subject-sidebar" style="padding-bottom: 15px;margin-bottom: 15px">
 						สรุปผลรวม
 					</div>
 					<div class="total clearfix" style="font-size: 13px">
 						<div style="float:left;color:#92A1A1">
-							Total
+							เงินทุน
 						</div>
 						<div style="float:right">
-							2000
+							{{getChoose.allFund}}
 						</div>
 					</div>
 
 					<div class="total clearfix">
 						<div style="float:left;color:#92A1A1">
-							Return
+							ผลรวมทั้งหมด
 						</div>
 						<div style="float:right;color:#378AE3">
-							2000
+							{{getChoose.allReward | number : '1.2-2' }}
 						</div>
 					</div>
 
 					<div class="btn-confirm">
 						<button type="button" class="">Block level button</button>
 					</div>
-			</div> -->
+			</div>
 
 		</div>
 	</div>

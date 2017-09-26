@@ -24,9 +24,9 @@ export class ContentComponent implements OnInit {
         )  
     }
 
-    choosThis(all,each)
+    toggleClick(e)
     {
-      console.log(each);
+      console.log(e);
     }
 
 
