@@ -36,7 +36,7 @@
 									(click)="_chose.selectTeam(inDetail,2);_chose.toggleClick(inDetail.matchID,2)">
 									x {{inDetail.oddB}}
 								</td>
-								<td style="width: 100px">กำลังแข่ง</td>
+								<td style="width: 100px">{{inDetail.statusgame}}</td>
 								<td class="team-winner">
 									<span *ngIf="inDetail.winner == null">-</span>
 									<span *ngIf="inDetail.winner != null">{{inDetail.winner}}</span>

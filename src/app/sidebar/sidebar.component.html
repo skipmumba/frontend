@@ -25,7 +25,7 @@
 						<div class="col-md-4" >
 							<div class="row">
 
-								<input style="margin:5px;text-align: right" class="form-control" type="text" 
+								<input [maxlength]="9" style="margin:5px;text-align: right" class="form-control" type="text" 
 								(ngModelChange)="getChoose.calBet($event,entry.id,entry.ood)" [ngModel]="mymodel" appOnlynumber>		
 								<div class="below-input">
 									Bet Amount
@@ -44,7 +44,7 @@
 						<div class="col-md-4">
 							<div class="row">
 								<input style="margin:5px;text-align: right" class="form-control" type="text" 
-								value="{{getChoose.eachReward[entry.id]}}" disabled>		
+								value="{{getChoose.eachReward[entry.id] | number : '1.2-2'}}" disabled>		
 								<div class="below-input">
 									Possible Winning
 								</div>								
@@ -65,7 +65,7 @@
 							เงินทุน
 						</div>
 						<div style="float:right">
-							{{getChoose.allFund}}
+							{{getChoose.allFund | number : '1.0' }}
 						</div>
 					</div>
 
@@ -79,7 +79,7 @@
 					</div>
 
 					<div class="btn-confirm">
-						<button type="button" class="">Block level button</button>
+						<button type="button" class="">ยืนยัน</button>
 					</div>
 			</div>
 

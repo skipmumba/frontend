@@ -40,7 +40,10 @@ export class ChoseTeamService {
   		{
   			this.allFund = 0
   		}
-
+  		if(isNaN(this.allReward))
+  		{
+  			this.allReward = 0
+  		}
   		this.allFund -= this.eachPrevious[id]
   		this.allFund += money
   		
