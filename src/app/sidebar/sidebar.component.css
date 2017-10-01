@@ -57,6 +57,16 @@ input::-webkit-input-placeholder {
 	color: #9CA9A9;
 	text-align: center;
 }
+.not-login
+{
+	font-weight: normal;
+	padding:20px;
+	border:1px solid  #ff4d4d;
+	margin-top:10px;
+	margin-bottom: 10px;
+	text-align: center;
+	color: #ff4d4d;
+}
 .btn-confirm 
 {
 	text-align: center;

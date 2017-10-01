@@ -68,6 +68,8 @@ export class ChoseTeamService {
  		this.matchList = this.matchList.filter(item => item.id !== id);
  		this.allFund -= Number(this.eachPrevious[id])
  		this.allReward -= Number(this.eachReward[id])
+     delete this.eachPrevious[id]
+     delete this.eachReward[id]
  		if(this.allFund <= 0)
  		{
  			this.allFund = Number(0)
@@ -76,8 +78,14 @@ export class ChoseTeamService {
  		{
  			this.allReward = Number(+0)
  		}
- 		delete this.eachPrevious[id]
- 		delete this.eachReward[id]
+    if(isNaN(this.allReward))
+      {
+        this.allReward = 0
+      }
+     if(isNaN(this.allFund))
+      {
+        this.allFund = 0
+      }
  		
  	}	
 

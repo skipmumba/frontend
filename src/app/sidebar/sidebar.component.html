@@ -1,7 +1,7 @@
 <div class="sidebar-wrap">
 	<div class="wrap-odd">
 		<div class="subject-sidebar">
-			รายการที่เลือก
+			รายการที่เลือก 
 		</div>
 		<div class="no-selected" *ngIf="getChoose.isEmptyObject(getChoose.toggle)">
 			เลือกทีมที่จะร่วมสนุก
@@ -78,8 +78,11 @@
 						</div>
 					</div>
 
-					<div class="btn-confirm">
+					<div class="btn-confirm" *ngIf="_store.getLogin()">
 						<button type="button" class="">ยืนยัน</button>
+					</div>
+					<div class="not-login" *ngIf="!_store.getLogin()">
+						กรุณาเข้าสู่ระบบก่อนร่วมสนุก
 					</div>
 			</div>
 

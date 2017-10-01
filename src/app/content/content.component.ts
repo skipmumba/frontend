@@ -9,19 +9,34 @@ import * as myGlobal from '../global'
   providers:[getMatchService]
 })
 export class ContentComponent implements OnInit {
-
+    loadIcon = true
   	constructor(private getmatch:getMatchService,private _chose:ChoseTeamService) { }
     listMatch;
+
+    firstFetch = 1;
+    listCat;
+
     monthThai = this.monthTh()
-  	fetchMatch(d,m,y)
+  	fetchMatch(d,m,y,cat)
     {
-        this.getmatch.get_json(myGlobal.hostphp+'/getmatch/getlistMatch/'+d+'/'+m+'/'+y+'?nocache='+this.getmatch.noCache()).subscribe
+      this.loadIcon = true
+        this.getmatch.get_json(myGlobal.hostphp+'/getmatch/getlistMatch/'+d+'/'+m+'/'+y+'/'+cat+'?nocache='+this.getmatch.noCache()).subscribe
         ( data => 
             {
               this.listMatch = data
-              console.log(this.listMatch);           
+                if(this.firstFetch == 1)
+               {
+                 this.listCat = data
+               }
+              this.firstFetch = 2;
+              this.loadIcon = false   
             }
         )  
+    }
+
+    tests()
+    {
+      console.log(123);
     }
 
     toggleClick(e)
@@ -62,8 +77,7 @@ export class ContentComponent implements OnInit {
     }
 	ngOnInit() 
 	{
-		var a = this.getmatch.noCache()
-		this.fetchMatch(0,0,0)
+		// this.fetchMatch(0,0,0,0)
 	}
 
 }

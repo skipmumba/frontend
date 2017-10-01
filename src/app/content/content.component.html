@@ -1,5 +1,8 @@
 <div class="content-wrap">
 
+	<div style="text-align: center;padding: 10px" *ngIf="loadIcon">
+		<i class="fa fa-circle-o-notch fa-spin fa-3x fa-fw"></i>
+	</div>
 	<div *ngFor="let matchDetail of listMatch">
 
 		<div class="catcontent-wrap">
@@ -38,7 +41,7 @@
 								</td>
 								<td style="width: 100px">{{inDetail.statusgame}}</td>
 								<td class="team-winner">
-									<span *ngIf="inDetail.winner == null">-</span>
+									<span *ngIf="inDetail.winner == null">ทีมชนะ</span>
 									<span *ngIf="inDetail.winner != null">{{inDetail.winner}}</span>
 								</td>
 							</tr>
