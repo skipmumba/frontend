@@ -17,7 +17,8 @@ import { StoreService } from './service/store/store.service'
 import { ChoseTeamService } from './service/chose-team/chose-team.service'
 
 import { KeypipePipe } from './pipe/keypipe.pipe';
-import { OnlynumberDirective } from './onlynumber.directive'
+import { OnlynumberDirective } from './onlynumber.directive';
+import { TopupComponent } from './topup/topup.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { OnlynumberDirective } from './onlynumber.directive'
     LoginComponent,
     KeypipePipe,
     OnlynumberDirective,
+    TopupComponent,
 
   ],
   imports: [

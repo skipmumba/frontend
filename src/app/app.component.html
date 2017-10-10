@@ -1,4 +1,5 @@
-<app-menubar></app-menubar>
+<app-menubar (showTopup)="comTopup.showTopupDiv($event)"></app-menubar>
+<app-topup #comTopup></app-topup>
 <app-slide></app-slide>
 <div class="wrap-content-sidebar">
     <div class="container-fluid">   

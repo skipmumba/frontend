@@ -1,3 +1,4 @@
+
 <div [hidden]="hideRegis">	
 	<app-register (emitCloseRegis)="closeRegis($event)"></app-register>
 </div>
@@ -17,7 +18,7 @@
 	        		<a class="nav-link" href="#">หน้าแรก</a>
 	      	</li>
 	      	<li class="nav-item">
-	        		<a class="nav-link" href="#">วิธีเติมเงิน</a>
+	        		<a (click)="callTopup()" class="nav-link" href="#">เติมเงิน</a>
 	      	</li>
 	      	<li class="nav-item">
 	        		<a class="nav-link" href="#">ข่าว</a>

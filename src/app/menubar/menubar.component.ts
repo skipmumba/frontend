@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit ,EventEmitter,Output ,Input } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import { StoreService } from '../service/store/store.service'
 
@@ -9,10 +9,18 @@ import { StoreService } from '../service/store/store.service'
 })
 export class MenubarComponent implements OnInit {
 
-  	constructor(private st:StoreService) {}
+    constructor(private st:StoreService) {}
+
+    @Output() showTopup = new EventEmitter<any>();
 
     hideRegis = true
     logIn = true
+
+    callTopup()
+    {
+      this.showTopup.emit(true)
+    }
+
   	regisTer()
   	{
   		  this.hideRegis = false
