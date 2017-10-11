@@ -6,7 +6,6 @@
 	overflow: hidden;
 	position: absolute;
 	top:40px;
-	border-bottom-right-radius: 100px;
-	border-bottom-left-radius: 100px;
+	
 	box-shadow:0px 52px 50px 50px #141414;
 }

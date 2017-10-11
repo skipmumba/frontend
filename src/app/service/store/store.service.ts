@@ -6,6 +6,7 @@ export class StoreService {
 
 	private already = false;
 	private storageMember;
+	private memberPrice = 0;
 	private memberEmail;
 	getLogin()
 	{
@@ -19,10 +20,19 @@ export class StoreService {
 	{
 		return this.memberEmail
 	}
-	setStorage(id,email)
+	getPrice()
+	{
+		return this.memberPrice
+	}
+	setnewPrice(price)
+	{
+		this.memberPrice = price
+	}
+	setStorage(id,email,price)
 	{
 		this.memberEmail = email
 		this.storageMember = id
+		this.memberPrice = price
 		this.already = true
 	}
 	logOut()

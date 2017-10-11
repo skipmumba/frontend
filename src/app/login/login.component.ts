@@ -33,12 +33,12 @@ export class LoginComponent implements OnInit {
         this.hideSpin = false
         clearTimeout(this.timeOut);
         this.timeOut = setTimeout(() => {
-      		  this._http.post(this.hostphp+'/backend/login/memberlogin',this.loginFrom.value, this.headers)
+      		  this._http.post(this.hostphp+'/login/memberlogin',this.loginFrom.value)
             .map(res => res.json())
         		.subscribe((data) => {
         			  if(data.statusLogin)
                 {
-                  this.storeService.setStorage(data.memberCode,data.email)
+                  this.storeService.setStorage(data.memberCode,data.email,data.price)
                   this.loginFrom.reset()
                   this.errorLogin = false
                   this.emitCloseLogin.emit(true)

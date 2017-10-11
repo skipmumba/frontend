@@ -7,8 +7,14 @@
 <div class="wrap-topup justify-content-center d-flex align-items-center" style="z-index: 99999" *ngIf="showDia">
 	
 	<div class="alert alert-danger w-25 text-center" role="alert"  *ngIf="!foundCode">
-	  	ไม่พบข้อมูล <i class="fa fa-times" aria-hidden="true"></i>
+		<div *ngIf="!alreadyUserCode">			
+	  		ไม่พบข้อมูล <i class="fa fa-times" aria-hidden="true"></i>
+		</div>
+		<div *ngIf="alreadyUserCode">
+			ถูกใช้ไปแล้ว <i class="fa fa-times" aria-hidden="true"></i>
+		</div>
 	</div>
+
 	<div class="alert alert-success w-25 text-center" role="alert"  *ngIf="foundCode">
 	  	ดำเนินการสำเร็จ <i class="fa fa-check-circle" aria-hidden="true"></i>
 	</div>
@@ -19,7 +25,7 @@
 	<div class="in-topup col-md-5 clearfix">
 		<div class="card  bg-dark">
 		  <h4 class="card-header text-warning">
-		  	เติมเงิน
+		  	เติมเงิน  
 		  	<button type="button" class="close" aria-label="Close" style="cursor: pointer;" (click)="closeTopup()">
 			  	<i class="fa fa-times" aria-hidden="true"></i>
 			</button>
@@ -35,7 +41,10 @@
 
 		    <h5 class="card-title text-warning">เลขอ้างอิง True wallet</h5>
 		    <div class="modal-body text-white bg-white rounded my-4 p-4">
-		    		<form [formGroup]="rFrom" (ngSubmit)="checkTopUp()">   	
+		    		<div class="alert alert-danger text-center" role="alert" *ngIf="!_store.getLogin()">
+					กรุณาเข้าสู่ระบบก่อนดำเนินการ
+				</div>
+		    		<form [formGroup]="rFrom" (ngSubmit)="checkTopUp()" >   	
 		    			<div class="row">
 		    				
 			    			<div class="col-md-5">
@@ -43,20 +52,23 @@
 							  	<span class="input-group-addon" id="sizing-addon2">
 							  		<i class="fa fa-phone text-primary" aria-hidden="true"></i>
 							  	</span>
-							  	<input type="text" placeholder="เบอร์โทร" formControlName="phone" class="form-control" required>
+							  	<input [readonly]="!_store.getLogin()" type="text" placeholder="เบอร์โทร" formControlName="phone" 
+							  	class="form-control" required>
 							</div>
 			    			</div>
 
 			    			<div class="col-md-7">
-						    	<div class="input-group" >
+						    	<div class="input-group" >			    		
 							  	<span class="input-group-addon" id="sizing-addon2">
 							  		<i class="fa fa-credit-card-alt text-primary " aria-hidden="true"></i>
 							  	</span>
-							  	<input type="text" placeholder="เลขที่อ้างอิง" formControlName="topup" class="form-control" required>
+							  	<input type="text" placeholder="เลขที่อ้างอิง" formControlName="topup" class="form-control" 
+							  	[readonly]="!_store.getLogin()" required>
 							     <span class="input-group-btn">
 							        	<button [disabled]="rFrom.invalid" class="btn btn-warning" style="cursor: pointer;" type="submit">ยืนยัน</button>
 							     </span>
-							</div>	    				
+							</div>
+
 			    			</div>	
 
 		    			</div>
