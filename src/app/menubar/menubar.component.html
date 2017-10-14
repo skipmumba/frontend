@@ -35,24 +35,9 @@
 	   		style="font-size: 13px;margin-left: 5px;color:red;cursor: pointer;"></i>
 	   	</div>
 	    	<div [hidden]="!st.getLogin()" class="btn-group">
-		  	<button class="btn btn-secondary btn-sm  dropdown-toggle" style="background: #000;border:none" type="button" data-toggle="dropdown" 
-		  	aria-haspopup="true" aria-expanded="false">
-		    		ยอดทั้งหมด : <b style="color:#F9D42F;">{{st.getPrice()}}</b>
+		  	<button class="btn btn-secondary btn-sm " style="background: #000;border:none" type="button">
+		    		ยอดทั้งหมด : <b style="color:#F9D42F;">{{st.getPrice()}} พ้อย</b>
 		  	</button>
-		  	<div class="dropdown-menu" style="font-size: 13px;background: #000">
-		   		<a class="dropdown-item" href="#">
-		   			<div class="clearfix">
-		   				<span style="float:left;color:#FFF">คงเหลือ</span>
-		   				<span style="float:right;color:#F9D42F;min-width: ">50000</span>
-		   			</div>
-		   		</a>
-		    		<a class="dropdown-item" href="#">
-		    			<div class="clearfix">
-		   				<span style="float:left;color:#FFF">ถอนได้</span>
-		   				<span style="float:right;color:#F9D42F;">5000</span>
-		   			</div>
-		    		</a>
-		  	</div>
 		</div>
 		<button [hidden]="!st.getLogin()" type="button" class="btn btn-outline-warning">การเงิน</button>
 		<!-- login section -->

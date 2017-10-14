@@ -46,7 +46,7 @@ export class RegisterComponent implements OnInit {
              clearTimeout(this.timeOut);
              this.timeOut = setTimeout(() => {
                    
-                   this.http.get(this.hostphp+'/backend/register/sameUser/'+a.value).map(res => res.json())
+                   this.http.get(this.hostphp+'/register/sameUser/'+a.value).map(res => res.json())
                       .subscribe(data => {    
                         console.log(data.state);           
                           if(data.state) {
@@ -70,7 +70,7 @@ export class RegisterComponent implements OnInit {
     {
         var dataUSer = this.rFrom.value
         
-        this.http.post(this.hostphp+'/backend/register/regisTer',dataUSer).map(ress => ress.json()).subscribe( (datas) => {
+        this.http.post(this.hostphp+'/register/regisTer',dataUSer).map(ress => ress.json()).subscribe( (datas) => {
             if(datas.regisStatus == 1)
             {
               this.succesRegis = true

@@ -49,7 +49,7 @@ export class ContentComponent implements OnInit {
     {
       if(percentA == 0 && percentB ==0)
       {
-        return ' - '
+        return ' 50 % vs 50% '
       }
       else 
       {

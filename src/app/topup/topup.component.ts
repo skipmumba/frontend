@@ -11,6 +11,7 @@ import { StoreService } from '../service/store/store.service'
   providers:[HttpService]
 })
 export class TopupComponent implements OnInit {
+  hostphp = myGlobal.hostphp
 	rFrom:FormGroup;
   showTopup = false
   loadSpin = false ;
@@ -30,7 +31,7 @@ export class TopupComponent implements OnInit {
   	{
 
   		  this.loadSpin = true
-        this._http.get_json('http://sirgod.com/bet/wallet/topup/checktop/'+this.rFrom.value.phone+'/'+this.rFrom.value.topup+'/'+this._store.getMemberid()+'?nocache='+this.random).subscribe(data => {
+        this._http.get_json(this.hostphp+'/wallet/topup/checktop/'+this.rFrom.value.phone+'/'+this.rFrom.value.topup+'/'+this._store.getMemberid()+'?nocache='+this.random).subscribe(data => {
          
           this.loadSpin = false
           this.showDia = true

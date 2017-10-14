@@ -5,7 +5,7 @@ import { Observable} from 'rxjs/Observable';
 export class StoreService {
 
 	private already = false;
-	private storageMember;
+	private storageMember:any = 0;
 	private memberPrice = 0;
 	private memberEmail;
 	getLogin()

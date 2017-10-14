@@ -1,5 +1,5 @@
 import { Component, OnInit,EventEmitter,Output ,Input  } from '@angular/core';
-import {Http, Response} from '@angular/http';
+import {Http, Response,Headers, RequestOptions} from '@angular/http';
 import 'rxjs/add/operator/map';
 import {  FormControl,FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { StoreService } from '../service/store/store.service'
@@ -14,9 +14,8 @@ export class LoginComponent implements OnInit {
   hostphp = myGlobal.hostphp
 	@Output() emitCloseLogin = new EventEmitter<any>();
 	loginFrom:FormGroup
-  headers = new Headers({
-    'Content-Type': 'application/json'
-  });
+
+
   	constructor(private _http:Http,private fb:FormBuilder,private storeService:StoreService) { 
 
   		this.loginFrom = this.fb.group({
@@ -28,12 +27,17 @@ export class LoginComponent implements OnInit {
     timeOut
     hideSpin = true
     errorLogin = false
+   
   	checkLogin()
   	{
+        let headers = new Headers();
+        headers.append('Content-Type', 'application/json');
+        let options = new RequestOptions({headers: headers});
+        
         this.hideSpin = false
         clearTimeout(this.timeOut);
         this.timeOut = setTimeout(() => {
-      		  this._http.post(this.hostphp+'/login/memberlogin',this.loginFrom.value)
+      		  this._http.post(this.hostphp+'/login/memberlogin',this.loginFrom.value,options)
             .map(res => res.json())
         		.subscribe((data) => {
         			  if(data.statusLogin)

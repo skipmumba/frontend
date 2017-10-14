@@ -2,16 +2,17 @@ import { Injectable } from '@angular/core';
 import * as Rx from 'rxjs/Rx';
 import 'rxjs/add/observable/of';
 import 'rxjs/add/operator/map'
-
+import { StoreService } from '../store/store.service'
 @Injectable()
 export class ChoseTeamService {
 
-  	constructor() { }
+  	constructor(private _store:StoreService) { }
  	matchList:any = []
  	toggle:any = {}
 
  	allFund:any = 0;
   	allReward:any = 0;
+    eachMatchMoney:any ={}
   	eachReward:any = {}
   	eachPrevious:any = {}
 
@@ -61,6 +62,7 @@ export class ChoseTeamService {
   		{
   			this.allReward = 0
   		}
+      this.eachMatchMoney[id] = money
   	}
 
   	removeChose(id)
@@ -70,6 +72,7 @@ export class ChoseTeamService {
  		this.allReward -= Number(this.eachReward[id])
      delete this.eachPrevious[id]
      delete this.eachReward[id]
+     delete this.eachMatchMoney[id] 
  		if(this.allFund <= 0)
  		{
  			this.allFund = Number(0)
@@ -91,6 +94,7 @@ export class ChoseTeamService {
 
  	selectTeam(alldata,xA)
  	{
+   console.log();
  		var tid = alldata.matchID+''+xA
  		var team = (xA == 1 ?alldata.team1:alldata.team2)
  		var odds = (xA == 1 ?alldata.oddA:alldata.oddB)
@@ -100,7 +104,7 @@ export class ChoseTeamService {
  			'teamChoose':team,
  			'teamVSteam':alldata.team1+' vs '+alldata.team2,
  			'teamnum':xA,
- 			'ood':odds
+ 			'ood':odds,
  		})
 
  		return this.matchList
