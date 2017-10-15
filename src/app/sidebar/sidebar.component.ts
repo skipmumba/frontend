@@ -30,15 +30,28 @@ export class SidebarComponent implements OnInit {
             this.insertSuc = true
               let newprice = this._store.getPrice()-data.betmoney
               this._store.setnewPrice(newprice)
+              this.getChoose.matchList = []
+              this.getChoose.allFund = 0
+              this.getChoose.allReward = 0
+              this.getChoose.eachMatchMoney = {}
+              this.getChoose.eachReward = {}
+              this.getChoose.eachPrevious = {}
             setTimeout(()=>{
               this.insertSuc = false
+              this.getChoose.toggle = {}
+              this.getChoose.matchList = []
+              this.getChoose.allFund = 0
+              this.getChoose.allReward = 0
+              this.getChoose.eachMatchMoney = {}
+              this.getChoose.eachReward = {}
+              this.getChoose.eachPrevious = {}
             },4000)
            }
            else if(data.betsuc == 'notenough')
             {
               this.notEnough = true
               setTimeout(()=>{
-              this.notEnough = false
+              this.notEnough = false           
               },4000)
             }
             else 

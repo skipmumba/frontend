@@ -7,8 +7,11 @@
 
 		<div class="catcontent-wrap">
 
-			<div class="subject-cat">
-				{{matchDetail.catName}} 
+			<div class="subject-cat clearfix">
+				<div class="float-left text-uppercase"> {{matchDetail.catName}}</div>  
+				<div class="float-right text-warning" style="cursor: pointer;" (click)="refreshMatch()"> 
+					<i class="fa fa-refresh" aria-hidden="true"></i>
+				</div>
 			</div>
 
 			<div *ngFor="let inDetail of matchDetail.matchDetail">		
@@ -24,9 +27,8 @@
 									<b>{{inDetail.time}}</b>
 								</td>
 								<td class="namevs-table ">
-									<i class="td-time fa fa-clock-o" aria-hidden="true"></i>
+									<i class="td-time fa fa-dot-circle-o text-dark" aria-hidden="true"></i>
 									{{inDetail.team1}} vs {{inDetail.team2}}
-									<!-- <i class="td-time fa fa-clock-o" aria-hidden="true"></i> -->
 								</td>
 								<td class="percent-table">
 									{{checkFirstTimeMatch(inDetail.percentA,inDetail.percentB)}}
@@ -41,7 +43,7 @@
 								</td>
 								<td style="width: 100px">{{inDetail.statusgame}}</td>
 								<td class="team-winner">
-									<span *ngIf="inDetail.winner == null">ทีมชนะ</span>
+									<span *ngIf="inDetail.winner == null">ทีมชนะ ?</span>
 									<span *ngIf="inDetail.winner != null">{{inDetail.winner}}</span>
 								</td>
 							</tr>

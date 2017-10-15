@@ -10,7 +10,7 @@ export class ChoseTeamService {
  	matchList:any = []
  	toggle:any = {}
 
- 	allFund:any = 0;
+ 	  allFund:any = 0;
   	allReward:any = 0;
     eachMatchMoney:any ={}
   	eachReward:any = {}
@@ -94,7 +94,6 @@ export class ChoseTeamService {
 
  	selectTeam(alldata,xA)
  	{
-   console.log();
  		var tid = alldata.matchID+''+xA
  		var team = (xA == 1 ?alldata.team1:alldata.team2)
  		var odds = (xA == 1 ?alldata.oddA:alldata.oddB)

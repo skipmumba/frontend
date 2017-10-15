@@ -43,7 +43,10 @@ export class ContentComponent implements OnInit {
     {
       console.log(e);
     }
-
+    refreshMatch()
+    {
+      this.fetchMatch(0,0,0,0)
+    }
 
     checkFirstTimeMatch(percentA,percentB)
     {
@@ -77,6 +80,7 @@ export class ContentComponent implements OnInit {
     }
 	ngOnInit() 
 	{
+    //first called by header
 		// this.fetchMatch(0,0,0,0)
 	}
 
