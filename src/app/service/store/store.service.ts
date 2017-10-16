@@ -8,9 +8,18 @@ export class StoreService {
 	private storageMember:any = 0;
 	private memberPrice = 0;
 	private memberEmail;
+	private jwtToken = null
 	getLogin()
 	{
 		return this.already	
+	}
+	getJwt()
+	{
+		return this.jwtToken
+	}
+	setJwt(token)
+	{
+		this.jwtToken = token
 	}
 	getMemberid()
 	{
@@ -40,6 +49,7 @@ export class StoreService {
 		this.memberEmail = null
 		this.storageMember = null
 		this.already = false
+		this.jwtToken = null
 	}
  	constructor() { }
 }

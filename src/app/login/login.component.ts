@@ -30,30 +30,34 @@ export class LoginComponent implements OnInit {
    
   	checkLogin()
   	{
-        let headers = new Headers();
-        headers.append('Content-Type', 'application/json');
-        let options = new RequestOptions({headers: headers});
         
         this.hideSpin = false
         clearTimeout(this.timeOut);
         this.timeOut = setTimeout(() => {
-      		  this._http.post(this.hostphp+'/login/memberlogin',this.loginFrom.value,options)
+      		  this._http.post(this.hostphp+'/login/memberlogin',this.loginFrom.value)
             .map(res => res.json())
-        		.subscribe((data) => {
-        			  if(data.statusLogin)
-                {
-                  this.storeService.setStorage(data.memberCode,data.email,data.price)
-                  this.loginFrom.reset()
-                  this.errorLogin = false
-                  this.emitCloseLogin.emit(true)
+        		.subscribe(
+                (data) => 
+                 {
+          			  if(data.statusLogin)
+                  {
+                    this.storeService.setStorage(data.memberCode,data.email,data.price)
+                    this.storeService.setJwt(data.token)
+                    this.loginFrom.reset()
+                    this.errorLogin = false
+                    this.emitCloseLogin.emit(true)
+                  }
+                  else 
+                  {
+                    console.log('!!!!');
+                    this.errorLogin = true
+                  }
+                  this.hideSpin = true
+          		  },
+                (error) =>{
+                  console.log('pls relogin');
                 }
-                else 
-                {
-                  console.log('!!!!');
-                  this.errorLogin = true
-                }
-                this.hideSpin = true
-        		})
+            )
         },5000)
   	}
 
