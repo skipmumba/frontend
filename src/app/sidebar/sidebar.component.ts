@@ -54,10 +54,16 @@ export class SidebarComponent implements OnInit {
               this.notEnough = false           
               },4000)
             }
-            else 
+            else if(data.betsuc == 'expire')
              {
-               console.log('err');
+               this._store.logOut()
              }
+            else 
+            {
+              console.log(data);
+            }
+        },(error)=>{
+          this._store.logOut()
         })
         
        

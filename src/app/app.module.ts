@@ -19,7 +19,6 @@ import { ChoseTeamService } from './service/chose-team/chose-team.service'
 import { KeypipePipe } from './pipe/keypipe.pipe';
 import { OnlynumberDirective } from './onlynumber.directive';
 import { TopupComponent } from './topup/topup.component';
-import { TestjwtComponent } from './testjwt/testjwt.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +33,6 @@ import { TestjwtComponent } from './testjwt/testjwt.component';
     KeypipePipe,
     OnlynumberDirective,
     TopupComponent,
-    TestjwtComponent,
 
   ],
   imports: [
