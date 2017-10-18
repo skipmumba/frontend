@@ -40,10 +40,27 @@
 									(click)="_chose.selectTeam(inDetail,2);_chose.toggleClick(inDetail.matchID,2)">
 									x {{inDetail.oddB}}
 								</td>
-								<td style="width: 100px">{{inDetail.statusgame}}</td>
+								<td style="width: 100px">
+									<span *ngIf="inDetail.winner == null">
+										{{inDetail.statusgame}}
+									</span>
+									<span *ngIf="inDetail.winner != null">
+										แข่งจบแล้ว
+									</span>
+								</td>
 								<td class="team-winner">
-									<span *ngIf="inDetail.winner == null">ทีมชนะ ?</span>
-									<span *ngIf="inDetail.winner != null">{{inDetail.winner}}</span>
+									<span class="float-left ml-1">
+										<span class="icon-trophy"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span></span>
+									</span>
+									<span *ngIf="inDetail.winner == null"> - </span>
+									<span *ngIf="inDetail.winner != null">
+										<span class="text-success" *ngIf="inDetail.winner ==1">
+											{{inDetail.team1}}
+										</span>
+										<span class="text-success" *ngIf="inDetail.winner ==2">
+											{{inDetail.team2}}
+										</span>
+									</span>
 								</td>
 							</tr>
 
