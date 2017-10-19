@@ -19,6 +19,11 @@ import { ChoseTeamService } from './service/chose-team/chose-team.service'
 import { KeypipePipe } from './pipe/keypipe.pipe';
 import { OnlynumberDirective } from './onlynumber.directive';
 import { TopupComponent } from './topup/topup.component';
+import { UserComponent } from './user/user.component';
+import { WithdrawComponent } from './user/withdraw/withdraw.component';
+import { DepositComponent } from './user/deposit/deposit.component';
+import { SettingComponent } from './user/setting/setting.component';
+import { GameComponent } from './user/game/game.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +38,11 @@ import { TopupComponent } from './topup/topup.component';
     KeypipePipe,
     OnlynumberDirective,
     TopupComponent,
+    UserComponent,
+    WithdrawComponent,
+    DepositComponent,
+    SettingComponent,
+    GameComponent,
 
   ],
   imports: [

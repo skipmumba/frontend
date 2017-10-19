@@ -1,0 +1,22 @@
+<!-- <div class="card m-4 bg-secondary text-light"> -->
+<div class="card m-4 bg-secondary text-light" *ngFor="let withDraw of listWithdraw;let indexs = index ">
+  	<div class="card-body text-center">
+    		<div class="clearfix">
+    			<div class="text-left"> 				
+    				<span class="m-2 text-warning"><b class="text-dark">ลำดับ :</b> {{indexs+1}} </span>
+    			</div>
+    			<div class="clearfix">			
+    				<span class="m-2 text-warning float-left"><b class="text-dark">หมายเลขการถอนเงิน :</b> {{withDraw.withdraw_id}}</span>
+	    			<span class="m-2 text-warning float-right"><b class="text-dark">สถานะการถอนเงิน :</b> 
+	    				<span *ngIf="withDraw.withdraw_status == 0">ยังไม่อนุมัติ</span>
+	    				<span *ngIf="withDraw.withdraw_status == 1">อนุมัติและโอนแล้ว</span>
+	    			</span>
+    			</div>
+    			<div class="clearfix">	
+	    			<span class="m-2 text-warning float-left"><b class="text-dark">จำเนินเงิน :</b>  {{withDraw.withdraw_price}} บาท</span>
+	    			<span class="m-2 text-warning float-right"><b class="text-dark">เวลาที่แจ้งถอนเงิน : </b> {{withDraw.withdraw_time}} </span>
+    			</div>
+    		</div>
+  	</div>
+</div>
+

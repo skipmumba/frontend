@@ -1,0 +1,23 @@
+<div class="card m-4  text-light">
+  	<div class="card-body ">
+  		<div class="text-dark my-3">
+    			<h4>เบอร์โทรศัพท์บัญชี True wallet ของคุณ</h4>
+    		</div>
+    			<form [formGroup]="rFrom" (ngSubmit)="onRegis()">	
+    				<div class="input-group my-4">
+				  	<div style="width:120px" class="input-group-addon" id="basic-addon1">เบอร์โทร</div>
+				  	<input  type="text" class="form-control" placeholder="เฉพาะตัวเลขเท่านั้น" formControlName="phone">			  
+				</div>			
+	    			<div class="input-group my-4">
+				  	<div style="width:120px" class="input-group-addon" id="basic-addon1">ยืนยันเบอร์โทร</div>
+				  	<input type="text" class="form-control" placeholder="เฉพาะตัวเลขเท่านั้น" formControlName="phoneconfirm">
+				  	<span class="input-group-btn">
+				        <button class="btn btn-success" [disabled]="rFrom.invalid" type="submit">ตกลง</button>
+				     </span>
+				</div>
+    			</form>
+		<div class="alert alert-danger my-4 text-center" role="alert">
+			*** 1 เบอร์ ต่อ 1 account ไม่สามารถเปลี่ยนแปลงได้ ***
+		</div>
+  	</div>
+</div>

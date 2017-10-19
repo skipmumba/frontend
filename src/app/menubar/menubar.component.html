@@ -1,3 +1,6 @@
+<!-- <div [hidden]="st.showSetting">	 -->
+	<app-user></app-user>
+<!-- </div> -->
 
 <div [hidden]="hideRegis">	
 	<app-register (emitCloseRegis)="closeRegis($event)"></app-register>
@@ -39,7 +42,7 @@
 		    		ยอดทั้งหมด : <b style="color:#F9D42F;">{{st.getPrice()}} พ้อย</b>
 		  	</button>
 		</div>
-		<button [hidden]="!st.getLogin()" type="button" class="btn btn-outline-warning">การเงิน</button>
+		<button [hidden]="!st.getLogin()" (click)="showSetting()" type="button" class="btn btn-outline-warning">การเงิน</button>
 		<!-- login section -->
 
 

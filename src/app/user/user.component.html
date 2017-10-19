@@ -1,0 +1,34 @@
+
+<div class="wrap-user w-100 h-100 d-flex justify-content-center">
+	<div class="col-md-6  align-self-center wrap-self-user h-75">
+		<div class="row">
+			<div class="col-md-3 bg-dark p-0" style="height:600px">
+				<ul class="p-0 text-secondary">
+					<li (click)="clickTab(1)" class="m-0 p-3" [class.active]="tabActive==1">
+						<span class="icon-make-a-donation mr-2 align-middle"></span>
+						<span class="align-middle">ประวัติการฝากเงิน</span>
+					</li>
+					<li (click)="clickTab(2)" class="m-0 p-3" [class.active]="tabActive==2">
+						<span class="icon-dollar-symbol mr-2 align-middle"></span> 
+						<span class="align-middle">ประวัติการถอนเงิน</span>
+					</li>
+					<li (click)="clickTab(3)" class="m-0 p-3" [class.active]="tabActive==3">
+						<span class="icon-credit-card mr-2 align-middle"></span>
+						<span class="align-middle">ตั้งค่าการโอน</span>
+					</li>
+				</ul>
+			</div>
+			<div style="position: absolute;left:101%;top:-15px;z-index: 10;cursor: pointer;">
+					<button (click)="closeSetting()" type="button" class="close" aria-label="Close" 
+						style="font-size: 30px;color:red;cursor: pointer;">
+			  			<i class="fa fa-times" aria-hidden="true"></i>
+					</button>
+				</div>
+			<div class="col-md-9 bg-light" style="height:600px;overflow-y: auto;">
+				<app-deposit   [class.hide]="tabActive!=1"></app-deposit>
+				<app-withdraw [class.hide]="tabActive!=2"></app-withdraw>
+				<app-setting [class.hide]="tabActive!=3"></app-setting>
+			</div>
+		</div>
+	</div>
+</div>

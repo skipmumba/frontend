@@ -1,0 +1,15 @@
+<div class="card m-4 bg-secondary text-light" *ngFor="let deposits of listDeposit;let indexs = index ">
+  	<div class="card-body text-center">
+    		<div class="clearfix">
+    			<div class="clearfix">			
+	    			<span class="m-2 text-warning float-left"><b class="text-dark">ลำดับ :</b> {{indexs+1}}</span>
+	    			<span class="m-2 text-warning float-right"><b class="text-dark">หมายเลขอ้างอิง :</b>  {{deposits.wallet_code}}</span>
+    			</div>
+    			<div class="clearfix">	
+	    			<span class="m-2 text-warning float-left"><b class="text-dark">จำเนินเงิน :</b>  {{deposits.wallet_price}} บาท</span>
+	    			<span class="m-2 text-warning float-right"><b class="text-dark">เวลาเติมเงิน :</b> {{deposits.wallet_date}}</span>
+    			</div>
+    		</div>
+  	</div>
+</div>
+

@@ -1,7 +1,7 @@
-import { Component, OnInit ,EventEmitter,Output ,Input } from '@angular/core';
+import { Component, OnInit ,EventEmitter,Output ,Input,ViewChild } from '@angular/core';
 import {Observable} from 'rxjs/Observable';
 import { StoreService } from '../service/store/store.service'
-
+import {UserComponent} from '../user/user.component'
 @Component({
   selector: 'app-menubar',
   templateUrl: './menubar.component.html',
@@ -10,7 +10,7 @@ import { StoreService } from '../service/store/store.service'
 export class MenubarComponent implements OnInit {
 
     constructor(private st:StoreService) {}
-
+    @ViewChild(UserComponent) childeUser: UserComponent
     @Output() showTopup = new EventEmitter<any>();
 
     hideRegis = true
@@ -20,6 +20,12 @@ export class MenubarComponent implements OnInit {
     {
       this.showTopup.emit(true)
     }
+    showSetting()
+    {
+      this.childeUser.clickTab(1)
+      this.st.showSetting = false
+    }
+   
 
   	regisTer()
   	{

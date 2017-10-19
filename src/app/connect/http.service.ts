@@ -15,6 +15,12 @@ export class HttpService {
 	 		(response:Response) => response.json());
 	}
 
+	get_jsonheader(url)
+	{
+		return this.http.get(url+'?nocache='+this.random,this.setHeader()).map(
+	 		(response:Response) => response.json());
+	}
+
 	post_json(url,data)
 	{
 		return this.http.post(url+'?nocache='+this.random,data,this.setHeader())

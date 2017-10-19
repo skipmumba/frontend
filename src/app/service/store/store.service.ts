@@ -9,6 +9,8 @@ export class StoreService {
 	private memberPrice = 0;
 	private memberEmail;
 	private jwtToken = null
+
+	showSetting = true
 	getLogin()
 	{
 		return this.already	
