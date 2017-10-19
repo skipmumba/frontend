@@ -41,7 +41,8 @@ export class LoginComponent implements OnInit {
                  {
           			  if(data.statusLogin)
                   {
-                    this.storeService.setStorage(data.memberCode,data.email,data.price)
+                    console.log(data);
+                    this.storeService.setStorage(data.memberCode,data.email,data.price,data.phone)
                     this.storeService.setJwt(data.token)
                     this.loginFrom.reset()
                     this.errorLogin = false

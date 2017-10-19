@@ -1,16 +1,20 @@
 import { Component, OnInit } from '@angular/core';
 import {  FormControl,FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {StoreService} from '../../service/store/store.service'
+import {HttpService} from '../../connect/http.service'
 import * as myGlobal from '../../global'
 @Component({
   selector: 'app-setting',
   templateUrl: './setting.component.html',
-  styleUrls: ['./setting.component.css']
+  styleUrls: ['./setting.component.css'],
+  providers:[HttpService]
 })
 export class SettingComponent implements OnInit {
 	hostphp = myGlobal.hostphp
 	pattern ="^[0-9]+"
+  hideSubmit = false;
   	rFrom:FormGroup;
-  	constructor(private fb:FormBuilder) { 
+  	constructor(private fb:FormBuilder,private _http:HttpService,private _store:StoreService) { 
   		this.rFrom = this.fb.group({
   			'phone':[null, Validators.compose([Validators.required,Validators.minLength(9),Validators.pattern(this.pattern)])],
   			'phoneconfirm':[null, Validators.required],
@@ -35,9 +39,18 @@ export class SettingComponent implements OnInit {
 	  		}
   		
   	}
+
+ 
   	onRegis()
   	{
-  		console.log('ok');
+  		 this._http.get_jsonheader(this.hostphp+'/userdeposit/setting/'+this._store.getMemberid()+'/'+this.rFrom.controls.phone.value)
+       .subscribe(data =>{
+         if(data.status == 'ok')
+         {
+             this._store.setPhone = this.rFrom.controls.phone.value
+             this.hideSubmit = true
+         }
+       })
   	}
   ngOnInit() {
   }

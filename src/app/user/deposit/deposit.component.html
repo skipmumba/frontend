@@ -1,4 +1,4 @@
-<div class="card m-4 bg-secondary text-light" *ngFor="let deposits of listDeposit;let indexs = index ">
+<div class="card m-4 bg-light" *ngFor="let deposits of listDeposit;let indexs = index ">
   	<div class="card-body text-center">
     		<div class="clearfix">
     			<div class="clearfix">			
@@ -7,7 +7,7 @@
     			</div>
     			<div class="clearfix">	
 	    			<span class="m-2 text-warning float-left"><b class="text-dark">จำเนินเงิน :</b>  {{deposits.wallet_price}} บาท</span>
-	    			<span class="m-2 text-warning float-right"><b class="text-dark">เวลาเติมเงิน :</b> {{deposits.wallet_date}}</span>
+	    			<span class="m-2 text-warning float-right"><b class="text-dark">เวลาเติมเงิน :</b> {{deposits.wallet_date | date :'d/M/y - HH:mm:ss a'}}</span>
     			</div>
     		</div>
   	</div>

@@ -1,6 +1,6 @@
 
 <div class="wrap-user w-100 h-100 d-flex justify-content-center">
-	<div class="col-md-6  align-self-center wrap-self-user h-75">
+	<div class="col-md-7  align-self-center wrap-self-user h-75">
 		<div class="row">
 			<div class="col-md-3 bg-dark p-0" style="height:600px">
 				<ul class="p-0 text-secondary">
@@ -16,6 +16,10 @@
 						<span class="icon-credit-card mr-2 align-middle"></span>
 						<span class="align-middle">ตั้งค่าการโอน</span>
 					</li>
+					<li (click)="clickTab(4)" class="m-0 p-3" [class.active]="tabActive==4">
+						<span class="icon-credit-card mr-2 align-middle"></span>
+						<span class="align-middle">ประวัติเกม</span>
+					</li>
 				</ul>
 			</div>
 			<div style="position: absolute;left:101%;top:-15px;z-index: 10;cursor: pointer;">
@@ -28,6 +32,7 @@
 				<app-deposit   [class.hide]="tabActive!=1"></app-deposit>
 				<app-withdraw [class.hide]="tabActive!=2"></app-withdraw>
 				<app-setting [class.hide]="tabActive!=3"></app-setting>
+				<app-game [class.hide]="tabActive!=4"></app-game>
 			</div>
 		</div>
 	</div>

@@ -9,7 +9,7 @@ export class StoreService {
 	private memberPrice = 0;
 	private memberEmail;
 	private jwtToken = null
-
+	private userphone = null
 	showSetting = true
 	getLogin()
 	{
@@ -39,10 +39,15 @@ export class StoreService {
 	{
 		this.memberPrice = price
 	}
-	setStorage(id,email,price)
+	setPhone(data)
+	{
+		this.userphone =  data
+	}
+	setStorage(id,email,price,phone)
 	{
 		this.memberEmail = email
 		this.storageMember = id
+		this.userphone = phone
 		this.memberPrice = price
 		this.already = true
 	}
@@ -52,6 +57,7 @@ export class StoreService {
 		this.storageMember = null
 		this.already = false
 		this.jwtToken = null
+		this.userphone = null
 	}
  	constructor() { }
 }
