@@ -10,12 +10,15 @@ import * as myGlobal from '../../global'
 })
 export class GameComponent implements OnInit {
 	hostphp = myGlobal.hostphp
+  spin = false
   	constructor(private _http:HttpService,private _store:StoreService) { }
   	betList
   	getBet()
   	{
+      this.spin = true
   		this._http.get_jsonheader(this.hostphp+'/userdeposit/listbet/'+this._store.getMemberid()).subscribe(data =>{
-  			console.log(data);
+        this.spin = false
+  			this.betList = data;
   		})
   	}
 

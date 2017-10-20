@@ -4,12 +4,12 @@
     			<h4>เบอร์โทรศัพท์บัญชี True wallet ของคุณ</h4>
     		</div>
     			<form [formGroup]="rFrom" (ngSubmit)="onRegis()">	
-    			<div class="input-group my-4">
+    				<div class="input-group my-4">
 				  	<div style="width:120px" class="input-group-addon" id="basic-addon1">เบอร์โทร</div>
 				  	<input [readonly]="hideSubmit" *ngIf="!_store.userphone" type="text" class="form-control" placeholder="เฉพาะตัวเลขเท่านั้น"  formControlName="phone">		
 				  	<input *ngIf="_store.userphone" [readonly]="_store.userphone" type="text" class="form-control" [value]="_store.userphone" placeholder="เฉพาะตัวเลขเท่านั้น"  formControlName="phone">			  
 				</div>			
-	    		<div class="input-group my-4" *ngIf="!_store.userphone" [hidden]="hideSubmit"> 
+	    			<div class="input-group my-4" *ngIf="!_store.userphone" [hidden]="hideSubmit"> 
 				  		<div style="width:120px" class="input-group-addon"  id="basic-addon1">ยืนยันเบอร์โทร</div>
 				  		<input type="text" class="form-control" placeholder="เฉพาะตัวเลขเท่านั้น" formControlName="phoneconfirm">
 				  		<span class="input-group-btn">

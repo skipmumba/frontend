@@ -24,6 +24,7 @@ import { WithdrawComponent } from './user/withdraw/withdraw.component';
 import { DepositComponent } from './user/deposit/deposit.component';
 import { SettingComponent } from './user/setting/setting.component';
 import { GameComponent } from './user/game/game.component';
+import { NotifywithdrawComponent } from './user/notifywithdraw/notifywithdraw.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +44,7 @@ import { GameComponent } from './user/game/game.component';
     DepositComponent,
     SettingComponent,
     GameComponent,
+    NotifywithdrawComponent,
 
   ],
   imports: [

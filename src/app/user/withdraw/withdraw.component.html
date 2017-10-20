@@ -1,4 +1,29 @@
+                <div class="text-center h-100 d-flex justify-content-center" *ngIf="spin">
+                    <i class="align-self-center fa fa-spinner fa-spin fa-3x fa-fw"></i>
+                </div>
 <!-- <div class="card m-4 bg-secondary text-light"> -->
+
+<div class="card m-4 bg-light">
+    <div class="card-body">
+            <div class="alert alert-success text-center" *ngIf="showSuc" role="alert">
+                ดำเนินการสำเร็จกรุณารอผลการอนุมติ
+            </div>
+            <div class="alert alert-danger text-center" *ngIf="notE" role="alert">
+                ยอดเงินไม่พอ
+            </div>
+            <form [formGroup]="rFrom" (ngSubmit)="onSends()">
+                    <div class="text-danger">*ขั้นต่ำ 200 บาท</div>
+                <div class="input-group my-4"> 
+                     <div class="input-group-addon"  id="basic-addon1">ถอนเงิน</div>
+                    <input formControlName="money" type="text" class="form-control" placeholder="เฉพาะตัวเลขเท่านั้น">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success" [disabled]="rFrom.invalid" type="submit">ตกลง</button>
+                    </span>
+                </div>
+            </form>
+    </div>
+</div>
+
 <div class="card m-4 bg-light" *ngFor="let withDraw of listWithdraw;let indexs = index ">
   	<div class="card-body text-center">
     		<div class="clearfix">
