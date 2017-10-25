@@ -34,10 +34,7 @@ export class ContentComponent implements OnInit {
         )  
     }
 
-    tests()
-    {
-      console.log(123);
-    }
+  
 
     toggleClick(e)
     {
