@@ -1,3 +1,63 @@
+<!-- mobile -->
+<nav class="navbar  navbar-dark  fixed-top d-block d-sm-none" style="background:#000">
+
+    	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" 			aria-expanded="false" aria-label="Toggle navigation">
+    		<span class="navbar-toggler-icon"></span>
+  	</button>
+  	<!-- start show point mobile -->
+  	<a [hidden]="!st.getLogin()" class="navbar-brand text-right ml-2" href="#">
+  		<div  class="btn-group">
+		  	<button class="btn btn-secondary btn-sm " style="background: #000;border:none" type="button">
+		    		ยอดทั้งหมด : <b style="color:#F9D42F;">{{st.getPrice()}} พ้อย</b>
+		  	</button>
+		</div>
+  	</a>
+  	<!-- end show point mobile -->
+  	<div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+	    	<ul class="navbar-nav mr-auto mt-2 mt-lg-0 text-center">
+	    		<!-- logged -->
+	    		<li class="nav-item" [hidden]="!st.getLogin()">
+	        		<a class="nav-link" href="#">
+	        			<div class="userinfo-nav">
+				   		<i class="fa fa-user" aria-hidden="true" style="font-size: 13px;margin-right: 5px"></i>
+				   		{{st.getMemberEmail()}}
+				   		<i class="fa fa-sign-out" aria-hidden="true" (click)="logOut()" 
+				   		style="font-size: 13px;margin-left: 5px;color:red;cursor: pointer;"></i>
+				   	</div>
+	        		</a>
+	     	</li>
+	     	<!-- logged -->
+	      	<li class="nav-item active">
+	        		<a class="nav-link" href="#">หน้าแรก <span class="sr-only">(current)</span></a>
+	      	</li>
+	      	<li class="nav-item">
+	        		<a class="nav-link" (click)="callTopup()" href="#">เติมเงิน</a>
+	     	</li>
+	     	<li class="nav-item">
+	        		<a class="nav-link" href="#">ข่าวสาร</a>
+	     	</li>
+	     	<!-- not login -->
+	     	<li class="nav-item" [hidden]="st.getLogin()">
+	        		<a class="nav-link" href="#">
+	        			<button (click)="showLogin()"   class="btn btn-outline-success my-2 my-sm-0" type="submit">
+	        				<i class="fa fa-key" aria-hidden="true"></i> เข้าสู่ระบบ
+	        			</button>
+	        		</a>
+	     	</li>
+	     	<li class="nav-item" [hidden]="st.getLogin()">
+	        		<a class="nav-link" href="#">
+	        			<button (click)="regisTer()" class="btn btn-outline-warning my-2 my-sm-0" type="submit">สมัครสมาชิก</button>  
+	        		</a>
+	     	</li>
+	     	<!-- not login -->
+
+
+	    	</ul>
+  	</div>
+</nav>
+
+<!-- end mobile -->
+
 <div [hidden]="st.showSetting">	
 	<app-user></app-user>
 </div>
@@ -9,7 +69,7 @@
 <div [hidden]="logIn">	
 	<app-login (emitCloseLogin)="closeLogin($event)"></app-login>
 </div>
-<nav class="navbarfix navbar navbar-expand-lg  fixed-top">
+<nav class="navbarfix navbar navbar-expand-lg  fixed-top d-none d-sm-block">
 	<div class="container">
 		
   
@@ -24,7 +84,7 @@
 	        		<a (click)="callTopup()" class="nav-link" href="#">เติมเงิน</a>
 	      	</li>
 	      	<li class="nav-item">
-	        		<a class="nav-link" href="#">ข่าว</a>
+	        		<a class="nav-link" href="#">ข่าวสาร</a>
 	      	</li>
 	    	</ul>
 
