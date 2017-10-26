@@ -94,19 +94,21 @@ export class ChoseTeamService {
 
  	selectTeam(alldata,xA)
  	{
- 		var tid = alldata.matchID+''+xA
- 		var team = (xA == 1 ?alldata.team1:alldata.team2)
- 		var odds = (xA == 1 ?alldata.oddA:alldata.oddB)
- 		this.matchList.push({
- 			'matchId':alldata.matchID,
- 			'id':tid,
- 			'teamChoose':team,
- 			'teamVSteam':alldata.team1+' vs '+alldata.team2,
- 			'teamnum':xA,
- 			'ood':odds,
- 		})
-
- 		return this.matchList
+     var removeAnother = (xA == 1 ?2:1)
+     this.toggle[alldata.matchID+''+removeAnother] = true
+     this.toggleClick(alldata.matchID,removeAnother)
+   		var tid = alldata.matchID+''+xA
+   		var team = (xA == 1 ?alldata.team1:alldata.team2)
+   		var odds = (xA == 1 ?alldata.oddA:alldata.oddB)
+   		this.matchList.push({
+   			'matchId':alldata.matchID,
+   			'id':tid,
+   			'teamChoose':team,
+   			'teamVSteam':alldata.team1+' vs '+alldata.team2,
+   			'teamnum':xA,
+   			'ood':odds,
+   		})
+   		return this.matchList
   	}
   	toggleClick(id,team)
   	{

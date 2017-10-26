@@ -11,11 +11,14 @@
             <div class="alert alert-danger text-center" *ngIf="notE" role="alert">
                 ยอดเงินไม่พอ
             </div>
+            <div class="alert alert-danger text-center" *ngIf="!_store.userphone" role="alert">
+                กรุณาตั้งค่าการโอนก่อน
+            </div>
             <form [formGroup]="rFrom" (ngSubmit)="onSends()">
                     <div class="text-danger">*ขั้นต่ำ 200 บาท</div>
                 <div class="input-group my-4"> 
                      <div class="input-group-addon"  id="basic-addon1">ถอนเงิน</div>
-                    <input formControlName="money" type="text" class="form-control" placeholder="เฉพาะตัวเลขเท่านั้น">
+                    <input formControlName="money" [readonly]="!_store.userphone" type="text" class="form-control" placeholder="เฉพาะตัวเลขเท่านั้น">
                     <span class="input-group-btn">
                         <button class="btn btn-success" [disabled]="rFrom.invalid" type="submit">ตกลง</button>
                     </span>

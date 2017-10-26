@@ -9,7 +9,7 @@ export class StoreService {
 	private memberPrice = 0;
 	private memberEmail;
 	private jwtToken = null
-	private userphone = null
+	userphone = null
 	showSetting = true
 	getLogin()
 	{
@@ -22,6 +22,7 @@ export class StoreService {
 	setJwt(token)
 	{
 		this.jwtToken = token
+		localStorage.setItem('token',token)
 	}
 	getMemberid()
 	{
@@ -38,10 +39,12 @@ export class StoreService {
 	setnewPrice(price)
 	{
 		this.memberPrice = price
+		localStorage.setItem('price',price)
 	}
 	setPhone(data)
 	{
 		this.userphone =  data
+		localStorage.setItem('phone',data)
 	}
 	setStorage(id,email,price,phone)
 	{
@@ -50,6 +53,10 @@ export class StoreService {
 		this.userphone = phone
 		this.memberPrice = price
 		this.already = true
+		localStorage.setItem('email',email)
+		localStorage.setItem('id',id)
+		localStorage.setItem('phone',phone)
+		localStorage.setItem('price',price)
 	}
 	logOut()
 	{
@@ -58,6 +65,7 @@ export class StoreService {
 		this.already = false
 		this.jwtToken = null
 		this.userphone = null
+		localStorage.clear();
 	}
  	constructor() { }
 }

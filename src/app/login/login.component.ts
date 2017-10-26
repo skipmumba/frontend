@@ -28,6 +28,37 @@ export class LoginComponent implements OnInit {
     hideSpin = true
     errorLogin = false
    
+    setLogin(first,data)
+    {
+      if(first==0)
+      {
+        var time:any = Math.floor(Date.now() / 1000)+3600
+        localStorage.setItem('time',time)
+        this.storeService.setStorage(data.memberCode,data.email,data.price,data.phone)
+        this.storeService.setJwt(data.token)
+        this.loginFrom.reset()
+        this.errorLogin = false
+        this.emitCloseLogin.emit(true)
+      }
+      else 
+      {
+        var time:any = Math.floor(Date.now() / 1000)
+        if(time>localStorage.getItem('time'))
+         {
+             console.log('expire');
+             localStorage.clear();
+         }
+        else 
+         {
+           this.storeService.setStorage(localStorage.getItem('id'),localStorage.getItem('email'),localStorage.getItem('price'),localStorage.getItem('phone'))
+            this.storeService.setJwt(localStorage.getItem('token'))
+            this.loginFrom.reset()
+            this.errorLogin = false
+            this.emitCloseLogin.emit(true)
+         }
+      }
+    }
+
   	checkLogin()
   	{
         
@@ -41,12 +72,7 @@ export class LoginComponent implements OnInit {
                  {
           			  if(data.statusLogin)
                   {
-                    console.log(data);
-                    this.storeService.setStorage(data.memberCode,data.email,data.price,data.phone)
-                    this.storeService.setJwt(data.token)
-                    this.loginFrom.reset()
-                    this.errorLogin = false
-                    this.emitCloseLogin.emit(true)
+                    this.setLogin(0,data)
                   }
                   else 
                   {
@@ -68,6 +94,7 @@ export class LoginComponent implements OnInit {
   	}
 
  	 ngOnInit() {
+      this.setLogin(1,1)
   	}
 
 }

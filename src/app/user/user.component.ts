@@ -23,6 +23,10 @@ export class UserComponent implements OnInit {
   }
   clickTab(tab)
   {
+    if(this._st.userphone == null || this._st.userphone == 'null')
+       {
+         this._st.userphone =null
+       }
   	if(tab == 1)
   	{
   		this.childDeposit.getDeposit()		

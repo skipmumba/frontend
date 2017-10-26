@@ -47,12 +47,13 @@ export class SettingComponent implements OnInit {
        .subscribe(data =>{
          if(data.status == 'ok')
          {
-             this._store.setPhone = this.rFrom.controls.phone.value
+             this._store.setPhone(this.rFrom.controls.phone.value)
              this.hideSubmit = true
          }
        })
   	}
   ngOnInit() {
+   
   }
 
 }

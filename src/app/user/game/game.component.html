@@ -3,33 +3,33 @@
             </div>
 <div class="card m-4 bg-light" *ngFor="let databet of betList;let indexs = index ">
 <!-- <div class="card m-4 bg-light"> -->
-  	<div class="card-body text-center text-warning">
+  	<div class="card-body text-center text-warning bg-dark">
     		<div class="clearfix">
     			<div class="clearfix">			
-	    			<span class="m-2 float-left"><b class="text-dark">ลำดับ :</b> {{indexs+1}} </span>
+	    			<span class="m-2 float-left"><b class="text-light">ลำดับ :</b> {{indexs+1}} </span>
     			</div>
     			<div class="clearfix">			
-	    			<span class="m-2 float-left"><b class="text-dark">เกม : </b> {{databet.cat}} </span>
-	    			<span class="m-2 float-right"><b class="text-dark">สถานะการแข่ง : </b> {{databet.statusgame}}  </span>
+	    			<span class="m-2 float-left"><b class="text-light">เกม : </b> {{databet.cat}} </span>
+	    			<span class="m-2 float-right"><b class="text-light">สถานะการแข่ง : </b> {{databet.statusgame}}  </span>
     			</div>
     			<div class="clearfix">	
-	    			<span class="m-2 float-left"><b class="text-dark">ทีมแข่งขัน : </b>{{databet.vsteam}} </span>
-	    			<span class="m-2 float-right"><b class="text-dark">เวลาแข่งขัน : 
+	    			<span class="m-2 float-left"><b class="text-light">ทีมแข่งขัน : </b>{{databet.vsteam}} </span>
+	    			<span class="m-2 float-right"><b class="text-light">เวลาแข่งขัน : 
 	    			</b> {{databet.time | date :'d/M/y - HH:mm:ss a'}}</span>
     			</div>
     			<div class="clearfix">	
-	    			<span class="m-2 float-left"><b class="text-dark">ทีมที่เลือก : </b>{{databet.betteam}} </span>
-	    			<span class="m-2 float-right"><b class="text-dark">ตัวคูณที่คาดคะเน : 
+	    			<span class="m-2 float-left"><b class="text-light">ทีมที่เลือก : </b>{{databet.betteam}} </span>
+	    			<span class="m-2 float-right"><b class="text-light">ตัวคูณที่คาดคะเน : 
 	    			</b> {{databet.odd}} </span>
     			</div>
     			<div class="clearfix">	
-    				<span class="m-2 float-left"><b class="text-dark">จำนวนเงิน : </b> {{databet.betprice}} พ้อย</span>
-	    			<span class="m-2 float-right"><b class="text-dark">จำนวนเงินที่คาดคะเน :
+    				<span class="m-2 float-left"><b class="text-light">จำนวนเงิน : </b> {{databet.betprice}} พ้อย</span>
+	    			<span class="m-2 float-right"><b class="text-light">จำนวนเงินที่คาดคะเน :
 	    			</b> {{databet.guessMoney}} พ้อย</span>
     			</div>
     			<div class="clearfix">	
-    				<span class="m-2 float-left"><b class="text-dark">ทีมที่ชนะ : </b> {{databet.resultMatch}}</span>
-	    			<span class="m-2 float-right"><b class="text-dark">สถานะเงินเข้าสู่ระบบ(สำหรับผู้ชนะ) :
+    				<span class="m-2 float-left"><b class="text-light">ทีมที่ชนะ : </b> {{databet.resultMatch}}</span>
+	    			<span class="m-2 float-right"><b class="text-light">สถานะเงินเข้าสู่ระบบ(สำหรับผู้ชนะ) :
 	    			</b> {{databet.moneystatus}} </span>
     			</div>
     		</div>
