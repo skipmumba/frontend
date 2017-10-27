@@ -29,12 +29,10 @@ export class SettingComponent implements OnInit {
   			// console.log(this.rFrom.controls.phoneconfirm.value);	
 	  		if(rf.controls.phone.value != rf.controls.phoneconfirm.value)
 	  		{
-	  			console.log('not match');
 	  			return ({"notmatch": true})
 	  		}
 	  		else 
 	  		{
-	  			console.log('match');
 	  			return (null)
 	  		}
   		

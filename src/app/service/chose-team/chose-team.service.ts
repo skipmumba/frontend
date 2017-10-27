@@ -95,8 +95,11 @@ export class ChoseTeamService {
  	selectTeam(alldata,xA)
  	{
      var removeAnother = (xA == 1 ?2:1)
-     this.toggle[alldata.matchID+''+removeAnother] = true
-     this.toggleClick(alldata.matchID,removeAnother)
+     var idseb = alldata.matchID+removeAnother
+     if(this.toggle[idseb])
+      {
+        this.toggleClick(alldata.matchID,removeAnother)
+      }
    		var tid = alldata.matchID+''+xA
    		var team = (xA == 1 ?alldata.team1:alldata.team2)
    		var odds = (xA == 1 ?alldata.oddA:alldata.oddB)
@@ -121,7 +124,6 @@ export class ChoseTeamService {
   		{
   			this.toggle[id+''+team] = true;
   		}
-  		// console.log(this.toggle);
   	}
 
   	isEmptyObject(obj) 

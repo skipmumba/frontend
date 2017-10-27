@@ -60,7 +60,7 @@ export class SidebarComponent implements OnInit {
              }
             else 
             {
-              console.log(data);
+              // console.log(data);
             }
         },(error)=>{
           this._store.logOut()
@@ -72,7 +72,7 @@ export class SidebarComponent implements OnInit {
     }
   	ngOnInit() 
   	{
-  		console.log(this._store.getLogin());
+  		// console.log(this._store.getLogin());
   	}
 
 }
