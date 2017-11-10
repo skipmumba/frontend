@@ -9,6 +9,7 @@ export class StoreService {
 	private memberPrice = 0;
 	private memberEmail;
 	private jwtToken = null
+	showNews = false
 	userphone = null
 	showSetting = true
 	getLogin()

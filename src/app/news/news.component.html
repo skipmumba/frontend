@@ -1,0 +1,40 @@
+<div class="content-wrap">
+		<div class="m-10" style="background: #252B36" *ngIf="!shownews">
+			<div class="row">
+
+
+
+				<div class="col-md-6" *ngFor="let news of listallnews">
+					<div class="block-news text-light m-3">
+						<div class="block-news-text p-3">
+							{{news.news_subject}}
+						</div>
+						<div class="news-readmore p-4" (click)="getnewId(news.news_id)">
+							ReadMore >
+							<p class="float-right">{{news.news_date | date :'d/M/y - HH:mm:ss a'}} </p>
+						</div>
+					</div>
+				</div>
+				
+			
+			</div>
+		</div>
+		<div class="container" *ngIf="shownews">
+			
+			<div class="col-md-12 d-flex justify-content-center">
+				<div class="w-75 w-sm-100">
+					<div class="card bg-dark text-light">
+					  <div class="card-header">
+					  	{{newsSub}}
+					    <button (click)="closeNews()" type="button" class="close text-danger" aria-label="Close">
+						  	<span aria-hidden="true">&times;</span>
+						</button>
+					  </div>
+					  <div class="card-body">
+					  	<div [innerHTML]="newsText"></div>
+					  </div>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>

@@ -3,7 +3,6 @@ import { NgModule } from '@angular/core';
 import { FormsModule,ReactiveFormsModule  }   from '@angular/forms';
 import {HttpModule} from '@angular/http'
 
-
 import { AppComponent } from './app.component';
 import { MenubarComponent } from './menubar/menubar.component';
 import { ContentComponent } from './content/content.component';
@@ -12,6 +11,7 @@ import { SlideComponent } from './slide/slide.component';
 import { CatheaderComponent } from './catheader/catheader.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
+
 
 import { StoreService } from './service/store/store.service'
 import { ChoseTeamService } from './service/chose-team/chose-team.service'
@@ -25,6 +25,7 @@ import { DepositComponent } from './user/deposit/deposit.component';
 import { SettingComponent } from './user/setting/setting.component';
 import { GameComponent } from './user/game/game.component';
 import { NotifywithdrawComponent } from './user/notifywithdraw/notifywithdraw.component';
+import { NewsComponent } from './news/news.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { NotifywithdrawComponent } from './user/notifywithdraw/notifywithdraw.co
     SettingComponent,
     GameComponent,
     NotifywithdrawComponent,
+    NewsComponent,
 
   ],
   imports: [

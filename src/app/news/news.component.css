@@ -1,0 +1,22 @@
+.block-news
+{
+	font-family: kanit;
+	border:1px solid #302E39;
+	background: #2D3542;
+}
+.block-news-text
+{
+	/*font-weight: bold;*/
+	background: #151921;
+	font-size: 20px;
+	overflow: hidden;
+	height: 83px;
+	text-overflow:ellipsis;
+}
+.news-readmore
+{
+	cursor: pointer;
+	color: lightblue;
+	text-transform: uppercase;
+	border-top:1px solid #302E39;
+}

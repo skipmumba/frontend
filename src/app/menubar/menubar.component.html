@@ -34,7 +34,7 @@
 	        		<a class="nav-link" (click)="callTopup()" href="#">เติมเงิน</a>
 	     	</li>
 	     	<li class="nav-item">
-	        		<a class="nav-link" href="#">ข่าวสาร</a>
+	        		<a class="nav-link" >ข่าวสาร</a>
 	     	</li>
 	     	<!-- not login -->
 	     	<li class="nav-item" [hidden]="st.getLogin()">
@@ -78,13 +78,13 @@
 		</a>
     		<ul class="navbar-nav mr-auto mt-2 mt-lg-0">
      		<li class="nav-item active">
-	        		<a class="nav-link" href="#">หน้าแรก</a>
+	        		<a class="nav-link" href="#" (click)="homePage($event)">หน้าแรก</a>
 	      	</li>
 	      	<li class="nav-item">
 	        		<a (click)="callTopup()" class="nav-link" href="#">เติมเงิน</a>
 	      	</li>
 	      	<li class="nav-item">
-	        		<a class="nav-link" href="#">ข่าวสาร</a>
+	        		<a class="nav-link" (click)="showNews()" href="#">ข่าวสาร</a>
 	      	</li>
 	    	</ul>
 

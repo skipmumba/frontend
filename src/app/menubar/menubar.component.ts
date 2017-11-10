@@ -25,7 +25,17 @@ export class MenubarComponent implements OnInit {
       this.childeUser.clickTab(1)
       this.st.showSetting = false
     }
+
+    showNews()
+    {      
+      this.st.showNews = true
+    }
    
+    homePage(event)
+    {
+      this.st.showNews = false
+        event.preventDefault()
+    }
 
   	regisTer()
   	{
