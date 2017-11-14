@@ -35,8 +35,12 @@
 
 		  	<h5 class="card-title text-warning">วิธีการโอนเงินผ่าน True wallet</h5>
 		  	<div class="modal-body bg-white text-dark rounded my-4 p-4" style="font-family: all;">
-        			ให้ท่านโอนเงินผ่าน เว็บไซต์ True Wallet หรือ แอพพลิเคชั่น True Wallet 
-        			หลังจากโอนเสร็จให้นำ <b class="text-success">เบอร์โทรและเลขที่อ้างอิง</b> มากรอกลงในช่องด่านล่างแล้วกดยืนยัน
+        			ให้ท่านโอนเงินผ่าน เว็บไซต์ True Wallet หรือ แอพพลิเคชั่น True Wallet มาที่เบอร์ใดเบอร์หนึ่งจากด้านล่างนี้
+        			
+        			<ul class="list-group my-3">
+        				<li class="list-group-item text-warning bg-dark" *ngFor="let phones of listphone">{{[phones]}}</li>
+        			</ul>
+        			หลังจากโอนเสร็จให้นำ <b class="text-success">เบอร์โทรที่โอน,เบอร์ของท่าน,เลขที่อ้างอิง</b> มากรอกลงในช่องด่านล่างแล้วกดยืนยัน
       		</div>
 
 		    <h5 class="card-title text-warning">เลขอ้างอิง True wallet</h5>
@@ -47,17 +51,28 @@
 		    		<form [formGroup]="rFrom" (ngSubmit)="checkTopUp()" >   	
 		    			<div class="row">
 		    				
-			    			<div class="col-md-5">
+			    			<div class="col-md-6">
 			    				<div class="input-group my-2" >
 							  	<span class="input-group-addon" id="sizing-addon2">
 							  		<i class="fa fa-phone text-primary" aria-hidden="true"></i>
 							  	</span>
-							  	<input [readonly]="!_store.getLogin()" type="text" placeholder="เบอร์โทร" formControlName="phone" 
+							  	<input [readonly]="!_store.getLogin()" type="text" placeholder="เบอร์ที่โอน" formControlName="referphone" 
 							  	class="form-control" required>
 							</div>
 			    			</div>
 
-			    			<div class="col-md-7">
+			    			<div class="col-md-6">
+			    				<div class="input-group my-2" >
+							  	<span class="input-group-addon" id="sizing-addon2">
+							  		<i class="fa fa-phone text-primary" aria-hidden="true"></i>
+							  	</span>
+							  	<input [readonly]="!_store.getLogin()" type="text" placeholder="เบอร์ของท่าน" formControlName="phone" 
+							  	class="form-control" required>
+							</div>
+			    			</div>
+
+
+			    			<div class="col-md-12 my-2">
 						    	<div class="input-group" >			    		
 							  	<span class="input-group-addon" id="sizing-addon2">
 							  		<i class="fa fa-credit-card-alt text-primary " aria-hidden="true"></i>

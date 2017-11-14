@@ -19,19 +19,28 @@ export class TopupComponent implements OnInit {
   showDia = false;
   alreadyUserCode = false;
 	patternTopup ="^[0-9]{1,30}"
+  listphone:any
   random = new Date().getTime()+new Date().getMilliseconds()
   	constructor(private fb:FormBuilder,private _http:HttpService,private _store:StoreService) { 
   		this.rFrom = this.fb.group({
         'topup':[null,Validators.compose([Validators.required,Validators.pattern(this.patternTopup)])],        
+        'referphone':[null,Validators.compose([Validators.required,Validators.pattern(this.patternTopup)])],        
   			'phone':[null,Validators.compose([Validators.required,Validators.pattern(this.patternTopup)])],	      
 		  	});
   	}
+
+    listTopup()
+    {
+      this._http.get_json(this.hostphp+'/wallet/topup/listphone').subscribe(data => {
+        this.listphone = data
+      })
+    }
 
   	checkTopUp()
   	{
 
   		  this.loadSpin = true
-        this._http.get_json(this.hostphp+'/wallet/topup/checktop/'+this.rFrom.value.phone+'/'+this.rFrom.value.topup+'/'+this._store.getMemberid()+'?nocache='+this.random).subscribe(data => {
+        this._http.get_json(this.hostphp+'/wallet/topup/checktop/'+this.rFrom.value.referphone+'/'+this.rFrom.value.phone+'/'+this.rFrom.value.topup+'/'+this._store.getMemberid()+'?nocache='+this.random).subscribe(data => {
          
           this.loadSpin = false
           this.showDia = true
@@ -72,6 +81,7 @@ export class TopupComponent implements OnInit {
     }
   	ngOnInit() 
   	{
+      this.listTopup()
   	}
 
 }

@@ -1,24 +1,23 @@
-			
-		<div class="row">
-			<div class="container">
-				<div class="row">
-					<div class="col-md-12">				
-
-						<div class="wrap-cat-header clearfix d-none d-sm-block">
-							<div class="wrap-image-cat" 
-							(click)="ContentComponent.fetchMatch(0,0,0,catDetail.catID)"
-							*ngFor="let catDetail of ContentComponent.listCat">
-								<img src="{{catDetail.catImage}}" style="cursor: pointer;">
-							</div>
-							
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- end catagory header -->
-      <!-- content and sidebar -->
+<div class="row" [hidden]="st.showNews">
+      <div class="container">
         <div class="row">
+          <div class="col-md-12">       
+
+            <div class="wrap-cat-header clearfix d-none d-sm-block">
+              <div class="wrap-image-cat" 
+              (click)="ContentComponent.fetchMatch(0,0,0,catDetail.catID)"
+              *ngFor="let catDetail of ContentComponent.listCat">
+                <img src="{{catDetail.catImage}}" style="cursor: pointer;">
+              </div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- end catagory header -->
+      <!-- content and sidebar -->
+        <div class="row" [hidden]="st.showNews">
           <div class="container">
             <div class="row">
 
@@ -37,3 +36,14 @@
           </div>
         </div>
       <!-- end content and sidebar -->
+      
+      <div class="row" *ngIf="st.showNews">
+      <!-- <div class="row"> -->
+        <div class="container">
+
+        <div class="col-md-12">
+         <app-news ></app-news>
+          
+        </div>
+      </div>
+      </div>

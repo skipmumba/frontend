@@ -25,12 +25,22 @@ export class MenubarComponent implements OnInit {
       this.childeUser.clickTab(1)
       this.st.showSetting = false
     }
-   
 
-  	regisTer()
-  	{
-  		  this.hideRegis = false
-  	}
+    showNews()
+    {      
+      this.st.showNews = true
+    }
+   
+    homePage(event)
+    {
+      this.st.showNews = false
+        event.preventDefault()
+    }
+
+    regisTer()
+    {
+        this.hideRegis = false
+    }
     showLogin()
     {
       this.logIn = false
@@ -50,8 +60,8 @@ export class MenubarComponent implements OnInit {
         this.st.logOut()
     }
 
-  	ngOnInit() 
-  	{
-  	}
+    ngOnInit() 
+    {
+    }
 
 }

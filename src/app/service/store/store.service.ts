@@ -10,6 +10,7 @@ export class StoreService {
 	private memberEmail;
 	private jwtToken = null
 	userphone = null
+	showNews = false
 	showSetting = true
 	getLogin()
 	{
