@@ -18,12 +18,12 @@
 					<table class="table table-bordered intable-list">								 
 						<tbody>
 							
-							<tr>
+							<tr [class.text-danger]="inDetail.cannotclick">
 
-								<td class="date-table">
+								<td class="date-table ">
 									<span *ngIf="inDetail.day<=9">0</span>{{inDetail.day}} 
 									{{monthThai[inDetail.month]}} 
-									<b>{{inDetail.time}}</b>
+									<b [class.text-danger]="inDetail.cannotclick">{{inDetail.time}}</b>
 								</td>
 								<td class="namevs-table">
 									<i class="td-time fa fa-dot-circle-o text-dark" aria-hidden="true"></i>
@@ -32,14 +32,23 @@
 								<td class="percent-table">
 									{{checkFirstTimeMatch(inDetail.percentA,inDetail.percentB)}}
 								</td>
-								<td class="multi-table" [class.click-bet]="_chose.toggle[inDetail.matchID+''+1]" 
+
+								<td *ngIf="!inDetail.cannotclick" class="multi-table" [class.click-bet]="_chose.toggle[inDetail.matchID+''+1]" 
 									(click)="_chose.selectTeam(inDetail,1);_chose.toggleClick(inDetail.matchID,1)">
 									x {{inDetail.oddA}} 
 								</td>
-								<td class="multi-table" [class.click-bet]="_chose.toggle[inDetail.matchID+''+2]" 
+								<td *ngIf="!inDetail.cannotclick" class="multi-table" [class.click-bet]="_chose.toggle[inDetail.matchID+''+2]" 
 									(click)="_chose.selectTeam(inDetail,2);_chose.toggleClick(inDetail.matchID,2)">
 									x {{inDetail.oddB}}
 								</td>
+
+								<td *ngIf="inDetail.cannotclick" class="cannot">
+									x {{inDetail.oddA}} 
+								</td>
+								<td *ngIf="inDetail.cannotclick" class="cannot">
+									x {{inDetail.oddB}}
+								</td>
+
 								<td style="width: 100px">
 									<span *ngIf="inDetail.winner == null">
 										{{inDetail.statusgame}}
