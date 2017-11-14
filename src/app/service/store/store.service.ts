@@ -9,7 +9,6 @@ export class StoreService {
 	private memberPrice = 0;
 	private memberEmail;
 	private jwtToken = null
-	showNews = false
 	userphone = null
 	showNews = false
 	showSetting = true
