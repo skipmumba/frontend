@@ -41,4 +41,8 @@ export class NewsComponent implements OnInit {
   		console.log('ngonit');
   	}
 
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> ac535a22c58f55d7661f30bd78901b88209845c5
