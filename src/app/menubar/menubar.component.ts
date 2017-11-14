@@ -28,7 +28,7 @@ export class MenubarComponent implements OnInit {
 
     showNews()
     {      
-      this.st.showNews = true
+        this.st.setShownew()
     }
    
     homePage(event)

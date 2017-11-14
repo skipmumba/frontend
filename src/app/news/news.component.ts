@@ -17,8 +17,10 @@ export class NewsComponent implements OnInit {
 
   	listNews()
   	{
+      
   		this._http.get_json(myGlobal.hostphp+'/news/listNews').subscribe(data =>{
   			this.listallnews = data
+        console.log(this.listallnews);
   		})
   	}
 

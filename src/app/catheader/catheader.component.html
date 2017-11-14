@@ -1,8 +1,8 @@
 
-<div class="row" [hidden]="st.showNews">
+<!-- <div class="row">
       <div class="container">
         <div class="row">
-          <div class="col-md-12">       
+          <div class="col-md-12">    -->    
 
 			
 		<div class="row" [hidden]="st.showNews">
@@ -43,14 +43,16 @@
           </div>
         </div>
       <!-- end content and sidebar -->
-      
+
+
+
+
+
       <div class="row" *ngIf="st.showNews">
-      <!-- <div class="row"> -->
         <div class="container">
 
         <div class="col-md-12">
-         <app-news ></app-news>
-          
+          <app-news ></app-news>         
         </div>
       </div>
       </div>

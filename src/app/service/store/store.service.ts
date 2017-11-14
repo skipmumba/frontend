@@ -12,6 +12,10 @@ export class StoreService {
 	userphone = null
 	showNews = false
 	showSetting = true
+	setShownew()
+	{
+		this.showNews = true
+	}
 	getLogin()
 	{
 		return this.already	
