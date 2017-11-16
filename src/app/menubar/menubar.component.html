@@ -10,6 +10,7 @@
 		  	<button class="btn btn-secondary btn-sm " style="background: #000;border:none" type="button">
 		    		ยอดทั้งหมด : <b style="color:#F9D42F;">{{st.getPrice()}} พ้อย</b>
 		  	</button>
+		  	<button [hidden]="!st.getLogin()" (click)="showSetting()" type="button" class="btn btn-outline-warning">การเงิน</button>
 		</div>
   	</a>
   	<!-- end show point mobile -->

@@ -97,8 +97,8 @@
 					<div *ngIf="insertSuc" class="alert alert-success m-2 text-center" role="alert">
 					 	ขอบคุณที่ร่วมสนุก
 					</div>
-					<div class="btn-confirm" *ngIf="_store.getLogin()">
-					<!-- <div class="btn-confirm" > -->
+					<!-- <div class="btn-confirm" *ngIf="_store.getLogin()"> -->
+					<div class="btn-confirm" >
 						<button (click)="letplay()" type="button" class="">ยืนยัน</button>
 					</div>
 					<div class="not-login" *ngIf="!_store.getLogin()">

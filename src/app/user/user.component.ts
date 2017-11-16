@@ -13,7 +13,7 @@ export class UserComponent implements OnInit {
   @ViewChild(WithdrawComponent) childWithdraw: WithdrawComponent
 	@ViewChild(GameComponent) childGame: GameComponent
   constructor(private _st:StoreService) { }
-  tabActive = 1
+  tabActive = 2
   //1 deposit
   //2  withdraw
   //3 settting

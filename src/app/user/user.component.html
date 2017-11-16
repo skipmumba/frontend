@@ -1,8 +1,10 @@
 
 <div class="wrap-user w-100 h-100 d-flex justify-content-center">
-	<div class="col-md-7  align-self-center wrap-self-user h-75">
+
+
+	<div class="col-md-7  align-self-center wrap-self-user h-75 d-none d-sm-block">
 		<div class="row">
-			<div class="col-md-3 bg-dark p-0" style="height:600px">
+			<div class="col-md-3  bg-dark p-0" style="height:600px">
 				<ul class="p-0 text-secondary">
 					<li (click)="clickTab(1)" class="m-0 p-3" [class.active]="tabActive==1">
 						<span class="mr-2 align-middle">
@@ -44,4 +46,37 @@
 			</div>
 		</div>
 	</div>
+
+
+	<!-- mobile -->
+	<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark d-block d-sm-none">
+	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+	    <span class="navbar-toggler-icon"></span>
+	  </button>
+	  <button (click)="closeSetting()" type="button" class="close" aria-label="Close" 
+			style="font-size: 30px;color:red;cursor: pointer;">
+			 <i class="fa fa-times" aria-hidden="true"></i>
+	</button>
+	  <b class="text-light">ยอดทั้งหมด :</b> <b class="text-success">{{_st.getPrice()}} พ้อย</b>
+	  <div class="collapse navbar-collapse" id="navbarNav">
+	    <ul class="navbar-nav">
+	  
+	
+	      <li (click)="clickTab(2)" class="nav-item p-2" [class.active]="tabActive==2">
+	        <b>ถอนเงิน</b>
+	      </li>
+	      <li (click)="clickTab(3)" class="nav-item p-2" [class.active]="tabActive==3">
+	        <b>ตั้งค่า</b>
+	      </li>
+	    
+	    </ul>
+	  </div>
+	</nav>
+	<div class="d-block d-sm-none w-100 h-100 bg-dark"  >
+		<app-deposit   [class.hide]="tabActive!=1"></app-deposit>
+		<app-withdraw [class.hide]="tabActive!=2"></app-withdraw>
+		<app-setting [class.hide]="tabActive!=3"></app-setting>
+		<app-game [class.hide]="tabActive!=4"></app-game>
+	</div>
+	<!-- mobile -->
 </div>
