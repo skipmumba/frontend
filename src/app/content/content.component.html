@@ -27,7 +27,9 @@
 								</td>
 								<td class="namevs-table">
 									<i class="td-time fa fa-dot-circle-o text-dark" aria-hidden="true"></i>
-									{{inDetail.team1}} vs {{inDetail.team2}}
+									{{inDetail.team1}} vs {{inDetail.team2}} 
+									<b class="text-success" *ngIf="inDetail.round == 1"> (1)</b>
+									<b class="text-success" *ngIf="inDetail.round == 2"> (2)</b>
 								</td>
 								<td class="percent-table">
 									{{checkFirstTimeMatch(inDetail.percentA,inDetail.percentB)}}
